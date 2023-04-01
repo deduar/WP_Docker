@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Solutions - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/solution/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/solution/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+
+    <div class="card-row">
+
+      
+      <div class="card">
+        <h2><a href="https://codingdojo.org/solution/Diamond/">Diamond</a></h2>
+        <div class="content">
+          Python alphabet = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;, &quot;G&quot;, &quot;H&quot;, &quot;I&quot;, &quot;J&quot;, &quot;K&quot;, &quot;L&quot;, &quot;M&quot;, &quot;N&quot;, &quot;O&quot;, &quot;P&quot;, &quot;Q&quot;, &quot;R&quot;,&quot;S&quot;, &quot;T&quot;, &quot;U&quot;, &quot;V&quot;, &quot;W&quot;, &quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;]; input = &quot;E&quot; index = alphabet.index(input) arr = alphabet[1:index] + alphabet[index:0:-1] total = index*2 + 1 edge = index - 1 print(&quot; &quot;*index + &quot;A&quot; + &quot; &quot;*index) for i in arr: print(&quot; &quot; *abs(edge) + i + &quot; &quot; * (total - 2 * abs(edge) - 2) + i + &quot; &quot; * abs(edge)) edge = edge - 1 print(&quot; &quot; * index + &quot;A&quot; + &quot; &quot; * index) Rust This is the more accurate solution for the moment for the Diamond kata.
+        </div>
+        <div class="card-footer">
+          <a href="https://codingdojo.org/solution/Diamond/" class="button">read more</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2><a href="https://codingdojo.org/solution/FizzBuzz/">FizzBuzz</a></h2>
+        <div class="content">
+          This is the list of solutions to the KataFizzBuzz.
+Java This is a solution with the twist of supplying the filtering from the outside of the ClassUnderTest .
+FizzBuzzTest.java: import static org.junit.Assert.*; import org.junit.Before; import org.junit.Test; public class FizzBuzzTest { private static final Object[] ARRAY_OF_2_FIZZ = {2, &#34;Fizz&#34;}; private static final Object[] ARRAY_OF_1_2 = {1, 2}; private static final Object[] ARRAY_OF_FIZZ_7_8_FIZZ = {&#34;Fizz&#34;, 7, 8, &#34;Fizz&#34;}; private static final Object[] ARRAY_OF_BUZZ = {&#34;Buzz&#34;}; private static final Object[] ARRAY_OF_FIZZBUZZ = {&#34;FizzBuzz&#34;}; private static final Object[] ARRAY_OF_FIZZBUZZ_TO_FIZZ = { &#34;FizzBuzz&#34;, 16, 17, &#34;Fizz&#34;, 19, &#34;Buzz&#34;, &#34;Fizz&#34;, 22, 23, &#34;Fizz&#34;, &#34;Buzz&#34;, 26, &#34;Fizz&#34;, 28, 29, &#34;FizzBuzz&#34;}; FizzBuzz fizzBuzz = new FizzBuzz(); @Before public void addFilters() { fizzBuzz.
+        </div>
+        <div class="card-footer">
+          <a href="https://codingdojo.org/solution/FizzBuzz/" class="button">read more</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2><a href="https://codingdojo.org/solution/FizzBuzzJava/">FizzBuzz Java</a></h2>
+        <div class="content">
+          /*
+@ProjectName:mianshi
+@Package:PACKAGE_NAME
+@ClassName:MianShi
+@Author:Rain
+@Date:2022-01-05 10:17
+@Description: */ public class MianShi { public static void main(String[] args) {
+m1(); System.out.println(&quot;********************&quot;); m2(); }
+public static void m1() { for (int i = 1; i &lt;= 100; i++) { if (i % 3 == 0 &amp;&amp; i % 5 == 0) { System.out.println(&ldquo;FizzBuzz&rdquo;); } else if (i % 3 == 0) { System.out.println(&ldquo;Fizz&rdquo;); } else if (i % 5 == 0) { System.
+        </div>
+        <div class="card-footer">
+          <a href="https://codingdojo.org/solution/FizzBuzzJava/" class="button">read more</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2><a href="https://codingdojo.org/solution/KataRomanNumerals/">Kata Roman Numerals</a></h2>
+        <div class="content">
+          Feel free to create a merge request on the codingdojo repository to suggest your own solution.
+Python This is the most readable solution of the Roman Numerals Kata downloaded on this website.
+#!/usr/bin/env python def number_to_numeral(number): &#34;&#34;&#34; &gt;&gt;&gt; number_to_numeral(1) &#39;I&#39; &gt;&gt;&gt; number_to_numeral(2) &#39;II&#39; &gt;&gt;&gt; number_to_numeral(12) &#39;XII&#39; &gt;&gt;&gt; number_to_numeral(10) &#39;X&#39; &gt;&gt;&gt; number_to_numeral(20) &#39;XX&#39; &gt;&gt;&gt; number_to_numeral(99) &#39;XCIX&#39; &gt;&gt;&gt; number_to_numeral(100) &#39;C&#39; &gt;&gt;&gt; number_to_numeral(199) &#39;CXCIX&#39; &gt;&gt;&gt; number_to_numeral(2399) &#39;MMCCCXCIX&#39; &gt;&gt;&gt; number_to_numeral(4000) Traceback (most recent call last): .
+        </div>
+        <div class="card-footer">
+          <a href="https://codingdojo.org/solution/KataRomanNumerals/" class="button">read more</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2><a href="https://codingdojo.org/solution/KataBankInGroovyByNiravAssar/">KataBankInGroovyByNiravAssar</a></h2>
+        <div class="content">
+          This was a solution I did in groovy. I have posted the entire package on google docs. The notable points to the solution are as follows:
+done in groovy
+done with object oriented principles and design
+uses recursion
+contains some high level documentation
+https://docs.google.com/leaf?id=0B62m4BA4zKvjMTdlZTNkNDktN2IyMS00YjcxLWJkN2ItZDc5MjNhMjYwOWE4&amp;sort=name&amp;layout=list&amp;num=50
+You can contact me with questions at
+        </div>
+        <div class="card-footer">
+          <a href="https://codingdojo.org/solution/KataBankInGroovyByNiravAssar/" class="button">read more</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2><a href="https://codingdojo.org/solution/KataBowlingByAndreasLarsson/">KataBowlingByAndreasLarsson</a></h2>
+        <div class="content">
+          In CodersDojoSweden we have done the KataBowling quite a lot of times.
+Our test suite usually ends up like:
+Gutter game = all zeroes, (score = 0) One pin down in each roll, (score = 20) Spare in first roll, one pin down in each other roll, (score = 10 + 1 + 18 = 29) Spare in last roll, one pin down in each other roll, (score = 18 + 10 + 1 = 29) Strike in first roll, one pin down in each other roll, (score = 10 + 1 + 1 + 18 = 30) Strike in last roll, one pin down in each other roll, (score = 18 + 10 + 1 + 1 = 30) Golden game = all strikes (score = 300) The highligts of the BowlingGameKata is:
+        </div>
+        <div class="card-footer">
+          <a href="https://codingdojo.org/solution/KataBowlingByAndreasLarsson/" class="button">read more</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2><a href="https://codingdojo.org/solution/KataFizzBuzzSmalltalkSolution/">KataFizzBuzzSmalltalkSolution</a></h2>
+        <div class="content">
+           fb := [:counter| |rules| rules := {15-&gt;&#39;FizzBuzz&#39;. 5-&gt;&#39;Buzz&#39;. 3-&gt;&#39;Fizz&#39;. 1-&gt;counter}. rightRule := rules detect: [:aRule| counter \\ aRule key == 0]. rightRule value]. self assert: (fb value: 7) == 7. self assert: (fb value: 3) == &#39;Fizz&#39;. self assert: (fb value: 5) == &#39;Buzz&#39;. self assert: (fb value: 15) == &#39;FizzBuzz&#39;. 1 to: 100 do: [:counter | Transcript show: (fb value: counter) asString; cr] 
+        </div>
+        <div class="card-footer">
+          <a href="https://codingdojo.org/solution/KataFizzBuzzSmalltalkSolution/" class="button">read more</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2><a href="https://codingdojo.org/solution/KataFizzBuzzSolution/">KataFizzBuzzSolution</a></h2>
+        <div class="content">
+          This my solution to the [KataFizzBuzz](/kata/FizzBuzz) , with the added twist of supplying the filtering from the outside of the ClassUnderTest .
+FizzBuzzTest.java: import static org.junit.Assert.*; import org.junit.Before; import org.junit.Test; public class FizzBuzzTest { private static final Object[] ARRAY_OF_2_FIZZ = {2, &#34;Fizz&#34;}; private static final Object[] ARRAY_OF_1_2 = {1, 2}; private static final Object[] ARRAY_OF_FIZZ_7_8_FIZZ = {&#34;Fizz&#34;, 7, 8, &#34;Fizz&#34;}; private static final Object[] ARRAY_OF_BUZZ = {&#34;Buzz&#34;}; private static final Object[] ARRAY_OF_FIZZBUZZ = {&#34;FizzBuzz&#34;}; private static final Object[] ARRAY_OF_FIZZBUZZ_TO_FIZZ = { &#34;FizzBuzz&#34;, 16, 17, &#34;Fizz&#34;, 19, &#34;Buzz&#34;, &#34;Fizz&#34;, 22, 23, &#34;Fizz&#34;, &#34;Buzz&#34;, 26, &#34;Fizz&#34;, 28, 29, &#34;FizzBuzz&#34;}; FizzBuzz fizzBuzz = new FizzBuzz(); @Before public void addFilters() { fizzBuzz.
+        </div>
+        <div class="card-footer">
+          <a href="https://codingdojo.org/solution/KataFizzBuzzSolution/" class="button">read more</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2><a href="https://codingdojo.org/solution/KataRomanNumeralsAsReadableAsWeCouldMakeIt/">KataRomanNumeralsAsReadableAsWeCouldMakeIt</a></h2>
+        <div class="content">
+          #!/usr/bin/env python # ## Roman Numerals Kata ## def number_to_numeral(number): &#34;&#34;&#34; &gt;&gt;&gt; number_to_numeral(1) &#39;I&#39; &gt;&gt;&gt; number_to_numeral(2) &#39;II&#39; &gt;&gt;&gt; number_to_numeral(12) &#39;XII&#39; &gt;&gt;&gt; number_to_numeral(10) &#39;X&#39; &gt;&gt;&gt; number_to_numeral(20) &#39;XX&#39; &gt;&gt;&gt; number_to_numeral(99) &#39;XCIX&#39; &gt;&gt;&gt; number_to_numeral(100) &#39;C&#39; &gt;&gt;&gt; number_to_numeral(199) &#39;CXCIX&#39; &gt;&gt;&gt; number_to_numeral(2399) &#39;MMCCCXCIX&#39; &gt;&gt;&gt; number_to_numeral(4000) Traceback (most recent call last): ... IndexError: list index out of range &#34;&#34;&#34; numerals_dict = { &#39;ones&#39;: [&#39;&#39;, &#39;I&#39;, &#39;II&#39;, &#39;III&#39;, &#39;IV&#39;, &#39;V&#39;, &#39;VI&#39;, &#39;VII&#39;, &#39;VIII&#39;, &#39;IX&#39;], &#39;tens&#39;: [&#39;&#39;, &#39;X&#39;, &#39;XX&#39;, &#39;XXX&#39;, &#39;XL&#39;, &#39;L&#39;, &#39;LX&#39;, &#39;LXX&#39;, &#39;LXXX&#39;, &#39;XC&#39;], &#39;hundreds&#39;: [&#39;&#39;, &#39;C&#39;, &#39;CC&#39;, &#39;CCC&#39;, &#39;CD&#39;, &#39;D&#39;, &#39;DC&#39;, &#39;DCC&#39;, &#39;DCCC&#39;, &#39;CM&#39;], &#39;thousands&#39;: [&#39;&#39;, &#39;M&#39;, &#39;MM&#39;, &#39;MMM&#39;], } s = [] for index in [&#39;ones&#39;, &#39;tens&#39;, &#39;hundreds&#39;, &#39;thousands&#39;]: number, remainder = divmod(number, 10) s.
+        </div>
+        <div class="card-footer">
+          <a href="https://codingdojo.org/solution/KataRomanNumeralsAsReadableAsWeCouldMakeIt/" class="button">read more</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <h2><a href="https://codingdojo.org/solution/KataRomanNumeralsYetAnotherOne/">KataRomanNumeralsYetAnotherOne</a></h2>
+        <div class="content">
+          import doctest,pdb def roman\_help(value, low, medium, high): &#34;&#34;&#34; &gt;&gt;&gt; roman_help(1, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;I&#39; &gt;&gt;&gt; roman_help(2, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;II&#39; &gt;&gt;&gt; roman_help(3, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;III&#39; &gt;&gt;&gt; roman_help(4, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;IV&#39; &gt;&gt;&gt; roman_help(5, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;V&#39; &gt;&gt;&gt; roman_help(6, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;VI&#39; &gt;&gt;&gt; roman_help(7, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;VII&#39; &gt;&gt;&gt; roman_help(8, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;VIII&#39; &gt;&gt;&gt; roman_help(9, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;IX&#39; &gt;&gt;&gt; roman_help(10, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;X&#39; &gt;&gt;&gt; roman_help(11, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;XI&#39; &gt;&gt;&gt; roman_help(12, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;XII&#39; &gt;&gt;&gt; roman_help(13, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;XIII&#39; &gt;&gt;&gt; roman_help(14, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;XIV&#39; &gt;&gt;&gt; roman_help(15, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;XV&#39; &gt;&gt;&gt; roman_help(16, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;XVI&#39; &gt;&gt;&gt; roman_help(17, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;XVII&#39; &gt;&gt;&gt; roman_help(18, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;XVIII&#39; &gt;&gt;&gt; roman_help(19, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;XIX&#39; &gt;&gt;&gt; roman_help(20, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) &#39;XX&#39; &#34;&#34;&#34; cases={1:low, 2:low*2, 3:low*3, 4:low+medium, 5: medium, 6:medium+low, 7:medium+low*2, 8: medium+low*3, 9: low+high,0:&#39;&#39; } return high*(value/10 )+cases[value%10] def roman(value): &#34;&#34;&#34; &gt;&gt;&gt; roman(1) &#39;I&#39; &gt;&gt;&gt; roman(2) &#39;II&#39; &gt;&gt;&gt; roman(3) &#39;III&#39; &gt;&gt;&gt; roman(4) &#39;IV&#39; &gt;&gt;&gt; roman(5) &#39;V&#39; &gt;&gt;&gt; roman(6) &#39;VI&#39; &gt;&gt;&gt; roman(7) &#39;VII&#39; &gt;&gt;&gt; roman(8) &#39;VIII&#39; &gt;&gt;&gt; roman(9) &#39;IX&#39; &gt;&gt;&gt; roman(10) &#39;X&#39; &gt;&gt;&gt; roman(19) &#39;XIX&#39; &gt;&gt;&gt; roman(49) &#39;XLIX&#39; &gt;&gt;&gt; roman(99) &#39;XCIX&#39; &gt;&gt;&gt; roman(309) &#39;CCCIX&#39; &gt;&gt;&gt; roman(527) &#39;DXXVII&#39; &gt;&gt;&gt; roman(789) &#39;DCCLXXXIX&#39; &gt;&gt;&gt; roman(1888) &#39;MDCCCLXXXVIII&#39; &gt;&gt;&gt; roman(1999) &#39;MCMXCIX&#39; &gt;&gt;&gt; roman(2001) &#39;MMI&#39; &#34;&#34;&#34; out=&#34;&#34; if value/100: out+=roman_help(value/100, &#34;C&#34;, &#34;D&#34;, &#34;M&#34;) value=value%100 if value/10: out+=roman_help(value/10, &#34;X&#34;, &#34;L&#34;, &#34;C&#34;) value=value%10 if value: out+=roman_help(value, &#34;I&#34;, &#34;V&#34;, &#34;X&#34;) return out if \_\_name\_\_==&#39;\_\_main\_\_&#39;: print doctest.
+        </div>
+        <div class="card-footer">
+          <a href="https://codingdojo.org/solution/KataRomanNumeralsYetAnotherOne/" class="button">read more</a>
+        </div>
+      </div>
+      
+
+    </div>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

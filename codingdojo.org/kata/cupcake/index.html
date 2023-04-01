@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Cupcake - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/cupcake/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/cupcake/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Cupcake
+        
+      </h1>
+
+      <h2 id="about-this-kata">About this kata</h2>
+<p>This kata was originally made to implement the decorator and composite pattern.</p>
+<h2 id="problem-description">Problem Description</h2>
+<p>Write a program that can build many cakes with many toppings like : &ldquo;Cupcake with chocolate and nuts&rdquo; Or &ldquo;🧁 with black 🍫 and 🥜 and 🍬&rdquo;. Be carful the order of topping is very important.</p>
+<p>Write a function or method they can show the name of cake.</p>
+<p>Write a function they can show the price of cake. The price is composed of base cake price and topping price.</p>
+<h2 id="bundle-of-non-fresh-cakes">Bundle of non fresh cakes</h2>
+<p>Now it&rsquo;s possible to make a bundle of cakes. The price of a bundle is 10% less than prices of each cake.</p>
+<p>It&rsquo;s possible to build a bundle of bundle with singles cakes.</p>
+<h2 id="suggested-test-cases">Suggested Test Cases</h2>
+<h3 id="decorator-pattern">Decorator pattern</h3>
+<p>In pseudocode to build a Cupcake with chocolate and nuts and sugar you will write</p>
+<pre tabindex="0"><code>var myCake = Sugar(Nuts(Chocolate(Cupcake())))
+</code></pre><p>With typing, we can start to test :</p>
+<ul>
+<li>I can put a Cupcake in a variable of type Cake</li>
+</ul>
+<h3 id="about-name-function-or-method">About name function or method</h3>
+<ul>
+<li>The name function should return &ldquo;🧁&rdquo;</li>
+<li>The name function should return &ldquo;🍪&rdquo;</li>
+<li>The name function should return &ldquo;🧁 with 🍫&rdquo;</li>
+<li>The name function should return &ldquo;🍪 with 🍫&rdquo;</li>
+<li>The name function should return &ldquo;🍪 with 🍫 and 🥜&rdquo;</li>
+<li>The name function should return &ldquo;🍪 with 🥜 and 🍫&rdquo;</li>
+</ul>
+<h3 id="about-price-function-or-method">About price function or method</h3>
+<ul>
+<li>The price function should return 1$ for &ldquo;🧁&rdquo;</li>
+<li>The price function should return 2$ for &ldquo;🍪&rdquo;</li>
+<li>The price function should return 1.1$ for &ldquo;🧁 with 🍫&rdquo;</li>
+<li>The price function should return 2.1$ for &ldquo;🍪 with 🍫&rdquo;</li>
+<li>The price function should return 2.2$ for &ldquo;🍪 with 🥜&rdquo;</li>
+</ul>
+<h3 id="bundle">Bundle</h3>
+<ul>
+<li>We can build a Bundle with 1 Cupcake and check price or description</li>
+<li>We can build a Bundle with 1 Cupcake and 1 Cookie and check price or description</li>
+<li>We can build a Bundle with 2 Cupcake and 1 Cookie and check price or description</li>
+<li>We can build a bundle with 1 bundle of 2 cakes and 1 Cupcake and check price or description</li>
+<li>We can build a bundle with many bundle of bundle and many cakes and check price or description</li>
+</ul>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/cupcake.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

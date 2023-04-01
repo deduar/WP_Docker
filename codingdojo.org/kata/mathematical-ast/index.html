@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Mathematical AST - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/mathematical-ast/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/mathematical-ast/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Mathematical AST
+        
+      </h1>
+
+      <h2 id="origin">Origin</h2>
+<p>This kata was originaly write to implement the visitor pattern</p>
+<h2 id="kata">Kata</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Write a program they build and Abstract Syntax Tree of a RPN mathematical expression from a string like:</p>
+<pre><code>                                           (+)
+Mathematical.parse(&quot;3 6 +&quot;) be produce     / \
+                                          /   \
+                                         3     6
+</code></pre>
+<p>and</p>
+<pre><code>                                                   (+)
+                                                   / \
+                                                  /   \
+                                                 3    (×)
+Mathematical.parse(&quot;3 6 -6 * +&quot;) be produce           / \
+                                                     /   \
+                                                    6    -6
+</code></pre>
+<p>For the first test You must chose objects or structs you will have in your AST.</p>
+<p>Possible solutions are :</p>
+<pre><code>new Addition(new Operand(3), new Operand(6))
+
+new Operation(new Add(), new Operand(3), new Operand(6))
+
+new Addition().setLeft(new Operand(3))
+new Addition().setRight(new Operand(6))
+
+...
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Make a method or function they build the RPN representation of AST</p>
+<p>For exemple,</p>
+<pre><code>  (+)
+  / \
+ /   \
+3    (×)    should be represented by 3 6 -6 × +
+     / \
+    /   \
+   6    -6
+</code></pre>
+<p>Make a method or function they build the infix representation of AST</p>
+<p>For exemple,</p>
+<pre><code>  (+)
+  / \                               
+ /   \                               3 + 6 × -6
+3    (×)    could be represented by       or 
+     / \                             3 + (6 × -6)
+    /   \                           
+   6    -6
+</code></pre>
+<p>Make a method or function they evaluate the AST</p>
+<pre><code>  (+)
+  / \
+ /   \
+3    (×)    = -33
+     / \
+    /   \
+   6    -6
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>Build the infix representation with the minimum of parenthesis.</p>
+<h3 id="step-4">Step 4</h3>
+<p>Implement operations:</p>
+<ul>
+<li>Exponent (^)</li>
+<li>Knuth&rsquo;s up-arrow (↑)</li>
+</ul>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/mathematical-ast.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

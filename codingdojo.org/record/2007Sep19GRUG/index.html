@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>2007Sep19GRUG - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/record/2007Sep19GRUG/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/record/2007Sep19GRUG/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        2007Sep19GRUG
+        
+      </h1>
+
+      <p><strong>Participants:</strong> Apologies, I forgot to make a list. It was about 10 -
+12 people, around half of whom hadn&rsquo;t come to a GRUG meeting before.</p>
+<p><strong>Scribe:</strong> <a href="https://codingdojo.org/people/EmilyBache">EmilyBache</a></p>
+<p><strong>Kata:</strong> <a href="https://codingdojo.org/kata/Minesweeper">KataMinesweeper</a> in Ruby on a Mac with
+TextMate and RSpec</p>
+<h2 id="schedule">Schedule</h2>
+<dl>
+<dt>:   18:00 ~ 18:30 informal welcome, explanations and setting</dt>
+<dt>up environment. We had already agreed before the meeting which Kata</dt>
+<dt>we would do, and that we would be using RSpec, through discussion on</dt>
+<dt>the mailing list.</dt>
+<dd>
+<p>18:30 ~ 20:30 Coding Session</p>
+</dd>
+<dd>
+<p>We tackled the problem in a <a href="https://codingdojo.org/RandoriKata">RandoriKata</a> style, using
+<a href="https://codingdojo.org/PingPong">PingPong</a> pair switching.</p>
+</dd>
+<dd>
+<p>20:30 ~ 21:00 Retrospective</p>
+</dd>
+<dd>
+<p>We talked about what happened in four categories.</p>
+</dd>
+<dd>
+<dl>
+<dt>What pleased us</dt>
+<dd>
+<p>* Good for beginners to Ruby, syntax questions answered without
+disrupting flow</p>
+</dd>
+<dd>
+<p>* Tests were very readable, partly thanks to RSpec</p>
+</dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt>What displeased us</dt>
+<dd>
+<p>* Several participants had never used a Mac or Ruby before,
+writing code was slow and frustrating due to keyboard and
+syntax difficulties.</p>
+</dd>
+<dd>
+<p>* Multiline strings in Ruby are ugly (compared to python)</p>
+</dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt>What surprised us</dt>
+<dd>
+<p>* we didn&rsquo;t solve the whole problem, although it was quite
+simple and we discussed design plans at the start (something we
+had thought at previous retrospectives might help
+speed progress)</p>
+</dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt>What puzzled us</dt>
+<dd>
+<p>* RSpec gives readable tests, but how on earth does it work
+underneath</p>
+</dd>
+<dd>
+<p>* Why didn&rsquo;t we start with the (failing) acceptance test
+instead of 0 0 input? That would have been better BDD.</p>
+</dd>
+<dd>
+<p>* Why did we give up on using a regexp to split up the input
+and instead implement a state machine</p>
+</dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt>We resolved to try the following at our next dojo meeting</dt>
+<dd>
+<p>* <a href="https://codingdojo.org/kata/Minesweeper">KataMinesweeper</a> again with Ruby and
+RSpec</p>
+</dd>
+<dd>
+<p>* Windows environment instead of Mac (familiar to
+more participants)</p>
+</dd>
+<dd>
+<p>* Start with the acceptance test then implement top down using
+mocking (NiclasNilsson suggested this)</p>
+</dd>
+<dd>
+<p>* Be more aware of the Ruby-knowledgeable/Ruby-newbie ratio
+(says David Vrensk)</p>
+</dd>
+<dd>
+<p>* Allow a Ruby-knowing person to grab the keyboard from a
+Ruby-newbie if the alternative is to dictate what to type letter
+by letter (David again)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/record/2007Sep19GRUG.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Reversi - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/Reversi/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/Reversi/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Reversi
+        
+      </h1>
+
+      <h2 id="about-this-kata">About this Kata</h2>
+<p>This Kata was introduced to me by
+<a href="https://codingdojo.org/people/LaurentBossavit">LaurentBossavit</a> &ndash;
+<a href="https://codingdojo.org/people/EmilyBache">EmilyBache</a></p>
+<p>Difficulty: Medium</p>
+<h2 id="problem-description">Problem Description</h2>
+<p>Reversi is a board game for two players. More information can be found
+on Wikipedia en.wikipedia.org/wiki/Reversi . This Kata is to write a
+program that takes a current board position together with information
+about whose turn it is, and returns a list of the legal moves for that
+player. A move is only legal if it results in at least one of the
+opponent&rsquo;s counters being flipped.</p>
+<h2 id="suggested-test-cases">Suggested Test Cases</h2>
+<pre><code>........
+........
+........
+...BW...
+...WB...
+........
+........
+........
+B
+</code></pre>
+<p>(A &ldquo;.&rdquo; indicates an empty square. A &ldquo;B&rdquo; indicates a black piece and a
+&ldquo;W&rdquo; represents a white piece. The trailing &ldquo;B&rdquo; indicates that it is
+black&rsquo;s turn)</p>
+<p>You could either output the possible moves as co-ordinates (columns
+labelled A - H, rows labelled 1 - 8 starting from top left hand corner)
+like this: [C5, D6, E3, F4]</p>
+<p>or graphically like this:</p>
+<pre><code>........
+........
+....0...
+...BW0..
+..0WB...
+...0....
+........
+........
+B
+</code></pre>
+<h2 id="comments-from-those-who-are-working-on-this-kata">Comments from those who are working on this Kata</h2>
+<p>Please try this Kata and comment! We could probably do with some more
+test cases too.</p>
+<p>I like this Kata, it looks nicer when there are spaces between the
+columns:</p>
+<pre><code> .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  . 
+ .  .  .  B  W  .  .  . 
+ .  .  .  W  B  .  .  . 
+ .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  . 
+ .  .  .  .  .  .  .  . 
+ B
+</code></pre>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/Reversi.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

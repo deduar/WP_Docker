@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Birthday Greetings - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/birthday-greetings/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/birthday-greetings/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Birthday Greetings
+        
+      </h1>
+
+      <p>As you&rsquo;re a very friendly person, you would like to send a birthday note to all the friends you have. But you have a lot of friends and a bit lazy, it may take some times to write all the notes by hand.</p>
+<p>The good news is that computers can do it automatically for you.</p>
+<p>Imagine you have a flat file with all your friends :</p>
+<pre><code> last_name, first_name, date_of_birth, email
+ Doe, John, 1982/10/08, john.doe@foobar.com
+ Ann, Mary, 1975/09/11, mary.ann@foobar.com
+</code></pre>
+<p>And you want to send them a happy birthday email on their birth date :</p>
+<pre><code> Subject: Happy birthday!
+
+ Happy birthday, dear &lt;first_name&gt;!
+</code></pre>
+<p>How would this software look like ? Try to implement it so you can easily change :</p>
+<ul>
+<li>the way you retrieve the friends data (for instance, try switching to a SQLite Db)</li>
+<li>the way you send the note : (for instance, imagine you want to send SMS instead of emails)</li>
+</ul>
+<p>What kind of tests would you write ? Would you use Mocks ?</p>
+<h2 id="additional-features">Additional Features</h2>
+<ul>
+<li>
+<p>Friends born on February, 29th should have their Birthday greeted on February, 28th</p>
+</li>
+<li>
+<p>Send a Birthday Reminder note when it is someone else birthday :</p>
+<pre><code>    Subject: Birthday Reminder
+
+    Dear &lt;first_name&gt;,
+
+    Today is &lt;someone_else_first_name&gt; &lt;someone_else_last_name&gt;'s birthday.
+    Don't forget to send him a message !
+</code></pre>
+</li>
+<li>
+<p>Send a single Birthday Reminder note</p>
+<pre><code>    Subject: Birthday Reminder
+
+    Dear &lt;first_name&gt;,
+
+    Today is &lt;full_name_1&gt;, &lt;full_name_2&gt; and &lt;full_name_3&gt;'s birthday.
+    Don't forget to send them a message !
+</code></pre>
+</li>
+</ul>
+<h2 id="origin">Origin</h2>
+<p>This kata is largely inspired by the work of Matteo Vaccari in <a href="http://matteo.vaccari.name/blog/archives/154">http://matteo.vaccari.name/blog/archives/154</a></p>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/birthday-greetings.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

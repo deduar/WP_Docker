@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Christmas delivery - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/christmas-delivery/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/christmas-delivery/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Christmas delivery
+        
+      </h1>
+
+      <h2 id="origin">Origin</h2>
+<p>This kata is largely inspired by the work of Joe Wright in <a href="https://code.joejag.com/coding-dojo/christmas-delivery/">https://code.joejag.com/coding-dojo/christmas-delivery/</a></p>
+<h2 id="kata">Kata</h2>
+<p>Due to huge population growth in the world, Santa Claus is having to change his existing process.</p>
+<p>Currently only one Elf can put a present on his Sleigh at a time and Santa wants to be able to be able to use multiple Elves.
+Specification</p>
+<p>In order to receive presents yourself this year, you&rsquo;ll have to design a system to support his changing process.</p>
+<h3 id="user-story-1">User Story 1</h3>
+<p>Start off by recreating the current system Santa has.</p>
+<p>Currently his system allows a single delivery elf to move presents onto his Sleigh:</p>
+<pre><code>Toy Machine
+     |
+     V
+(Gives Present)
+     |
+     V
+    Elf
+     |
+     V
+(Packs onto)
+     |
+     V
+Santa Sleigh
+</code></pre>
+<p>Once a delivery elf has a present it will take him a while to put it onto Santa&rsquo;s Sleigh. Once he has he calls back to say he&rsquo;s available to transport another present.</p>
+<h3 id="user-story-2">User Story 2</h3>
+<p>Santa has asked Mrs Claus to organise a number of delivery elves who will put presents onto his Sleigh.</p>
+<p>Mrs Claus will operate as a present receiver for the Toy Machines. She will then give these presents to the available delivery elves. If no elves are available she will keep hold of the present until they are available.</p>
+<pre><code>Toy Machine [1-N] -&gt; (Gives Present) -&gt; Mrs Claus --&gt; (Gives Present) -&gt; Elf [1-N] --&gt; (Packs onto) --&gt; Santa Sleigh
+</code></pre>
+<h3 id="user-story-3">User Story 3</h3>
+<p>Each present forms part of a families delivery, which consist of 1..N presents.</p>
+<p>The Toy Machine cannot guarantee that all a families presents will be sent to Mrs Claus together. Other families presents could come in-between. Where possible, presents from different families should not be put on the sleigh independently.</p>
+<p>But the delivery elves are an expensive resource so we’d prefer the requests to be interleaved rather than having them sit idle.</p>
+<p>You will need to devise a strategy to allow Mrs Claus to deliver presents by family when possible.</p>
+<h3 id="user-story-4">User Story 4</h3>
+<p>Santa has just received news that some families have been very naughty during the holiday period. He wants to be able to cancel presents for these families by telling Mrs Claus to discard their presents.
+Sleigh Interface</p>
+<p>Santa has provided this interface to represent his Sleigh.</p>
+<pre tabindex="0"><code>public interface SantasSleigh {
+   void pack(Present present);
+}
+</code></pre>
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/christmas-delivery.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

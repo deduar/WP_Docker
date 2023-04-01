@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>KataRomanNumeralsAsReadableAsWeCouldMakeIt - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/solution/KataRomanNumeralsAsReadableAsWeCouldMakeIt/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/solution/KataRomanNumeralsAsReadableAsWeCouldMakeIt/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        KataRomanNumeralsAsReadableAsWeCouldMakeIt
+        
+      </h1>
+
+      <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Roman Numerals Kata</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">##</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">number_to_numeral</span>(number):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; number_to_numeral(1)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;I&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; number_to_numeral(2)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;II&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; number_to_numeral(12)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;XII&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; number_to_numeral(10)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;X&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; number_to_numeral(20)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;XX&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; number_to_numeral(99)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;XCIX&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; number_to_numeral(100)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;C&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; number_to_numeral(199)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;CXCIX&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; number_to_numeral(2399)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#39;MMCCCXCIX&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&gt;&gt; number_to_numeral(4000)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Traceback (most recent call last):
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    ...
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    IndexError: list index out of range
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    numerals_dict <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;ones&#39;</span>:     [<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;I&#39;</span>, <span style="color:#e6db74">&#39;II&#39;</span>, <span style="color:#e6db74">&#39;III&#39;</span>, <span style="color:#e6db74">&#39;IV&#39;</span>, <span style="color:#e6db74">&#39;V&#39;</span>, <span style="color:#e6db74">&#39;VI&#39;</span>, <span style="color:#e6db74">&#39;VII&#39;</span>, <span style="color:#e6db74">&#39;VIII&#39;</span>, <span style="color:#e6db74">&#39;IX&#39;</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;tens&#39;</span>:     [<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;X&#39;</span>, <span style="color:#e6db74">&#39;XX&#39;</span>, <span style="color:#e6db74">&#39;XXX&#39;</span>, <span style="color:#e6db74">&#39;XL&#39;</span>, <span style="color:#e6db74">&#39;L&#39;</span>, <span style="color:#e6db74">&#39;LX&#39;</span>, <span style="color:#e6db74">&#39;LXX&#39;</span>, <span style="color:#e6db74">&#39;LXXX&#39;</span>, <span style="color:#e6db74">&#39;XC&#39;</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;hundreds&#39;</span>: [<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>, <span style="color:#e6db74">&#39;CC&#39;</span>, <span style="color:#e6db74">&#39;CCC&#39;</span>, <span style="color:#e6db74">&#39;CD&#39;</span>, <span style="color:#e6db74">&#39;D&#39;</span>, <span style="color:#e6db74">&#39;DC&#39;</span>, <span style="color:#e6db74">&#39;DCC&#39;</span>, <span style="color:#e6db74">&#39;DCCC&#39;</span>, <span style="color:#e6db74">&#39;CM&#39;</span>],
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;thousands&#39;</span>: [<span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#e6db74">&#39;M&#39;</span>, <span style="color:#e6db74">&#39;MM&#39;</span>, <span style="color:#e6db74">&#39;MMM&#39;</span>],
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> index <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#39;ones&#39;</span>, <span style="color:#e6db74">&#39;tens&#39;</span>, <span style="color:#e6db74">&#39;hundreds&#39;</span>, <span style="color:#e6db74">&#39;thousands&#39;</span>]:
+</span></span><span style="display:flex;"><span>        number, remainder <span style="color:#f92672">=</span> divmod(number, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>        s<span style="color:#f92672">.</span>insert(<span style="color:#ae81ff">0</span>, numerals_dict[index][remainder])
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(s)
+</span></span></code></pre></div>
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/solution/KataRomanNumeralsAsReadableAsWeCouldMakeIt.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

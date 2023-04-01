@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>2009Jan14DojoSEA - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/record/2009Jan14DojoSEA/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/record/2009Jan14DojoSEA/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        2009Jan14DojoSEA
+        
+      </h1>
+
+      <pre><code>Participantes: Bruno, Paulo, Tъlio, Carol, Adam, Laurindo, Fernando,
+</code></pre>
+<p>Cйlio, Victor.</p>
+<hr>
+<p>Problema: Continua Crossword - (http: // rubyquiz.com/ quiz10.html)</p>
+<hr>
+<ul>
+<li>levantamento com post-its do que falta para terminar: Tabuleiro
+Simples (Linhas e Colunas), Numeraзгo, Leitura do arquivo e Cantos.</li>
+<li>Estimamos em 5 ciclos (7 minutos) para finalizar o
+tabuleiro simples.</li>
+</ul>
+<p>Bruno + Paulo: Completando casos de teste para verificar se as linhas do
+tabuleiro estгo sendo montadas corretamente. Iniciaram testes da
+montagem de colunas</p>
+<p>Paulo + Tъlio: pegaram testes quebrados, sem reconhecer coluna.
+Aparentemente, o programa considera todas as casas, em vбrias linhas,
+como uma linha sу:</p>
+<p>X _ = X _ _ X _ X</p>
+<p>Comentaram assert para fazer uma pergunta.</p>
+<p>Decidiram quebrar a entrada a cada quebra de linha, gerando um array de
+strings. Recuperam numero de linhas a partir do tamanho do array
+resultante.</p>
+<p>Tъlio + Carol: Fizeram um loop sobre as linhas, aplicando o algoritimo
+anterior e o teste estб falhando porque a borda entre as linhas estб
+duplicada.</p>
+<p>Carol + Adam: Iniciaram o turno com o teste ainda quebrado. Tentaram
+alterar a posiзгo do loop for que trabalhava as diferentes linhas mas a
+idйia nгo obteve o resultado esperado. Entгo decidiram voltar o loop for
+para o seu local anterior.</p>
+<p>Adam + Laurindo: Verificaram que o problema estava na borda do meio.
+Faltava uma `#` no final da linha.</p>
+<p>Laurindo + Fernando: iniciaram novo teste, testando a situaзгo _ _ _
+_. O teste passou. A seguir iniciaram um teste do tipo _ _ _ _. O
+teste quebrou.</p>
+<pre><code>                                                                         _ _ _ _                                                                                               # _ _ #              
+</code></pre>
+<p>Fernando + celio: testaram o caso 0000_1001_1001. Nos demos por
+satisfeito de que linhas e colunas estб funcionando&hellip; comeзaram a
+refatorar o mйtodo.</p>
+<p>Cйlio + Victor = refatorando testes, extraido metodo para preencher
+linha.</p>
+<p>Victor + Bruno = Continuaзгo do refactoring do mйtodo getCrosswords(); e
+comentaram e identaram o cуdigo.</p>
+<hr>
+<ul>
+<li>Terminamos o cartгo em 9 ciclos.</li>
+</ul>
+<p>Na retrospectiva: Erramos no horбrio de novo, sempre atrasamos pra
+comeзar, pela primeira vez dos dojos terminamos no horбrio, ficou
+estipulado que se houver dъvida entre as duplas (=~1 minuto), o
+planejamento foi bem legal, foi definido que a lнngua do cуdigo deve ser
+a mesma do requisito, colocar nome das duplas no commit, integrar o
+contador ao eclipse, o germano boicotou a gente e levou o projetor&hellip;</p>
+<hr>
+<p>Cуdigo estб no github: http: //
+github.com/brunopedroso/dojo_crosswords/tree/master</p>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/record/2009Jan14DojoSEA.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

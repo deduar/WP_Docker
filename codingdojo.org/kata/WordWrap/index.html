@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Word wrap - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/WordWrap/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/WordWrap/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Word wrap
+        
+      </h1>
+
+      <p>This kata is from Robert Martin and his blog includes a solution in Java
+<a href="http://thecleancoder.blogspot.com/2010/10/craftsman-62-dark-path.html">[1]</a>
+.</p>
+<h2 id="problem-description">Problem Description</h2>
+<p>You write a class called Wrapper, that has a single static function
+named wrap that takes two arguments, a string, and a column number. The
+function returns the string, but with line breaks inserted at just the
+right places to make sure that no line is longer than the column number.
+You try to break lines at word boundaries.</p>
+<p>Like a word processor, break the line by replacing the last space in a
+line with a newline.</p>
+<h2 id="comments-from-those-who-are-working-on-this-kata">Comments from those who are working on this Kata</h2>
+<p>Here you could write some thoughts about what you have learnt from this
+Kata. If you want to discuss your approach and give some code samples,
+you might want to link to a new page &ldquo;KataXByY &ldquo;. You don&rsquo;t have to post
+all the code of your solution, or claim that it is the best possible
+solution. What is interesting is your insights into the problem, and
+decisions you made in the past.</p>
+<h3 id="different-languages">Different Languages</h3>
+<ul>
+<li>Python classic recursive solution, code and some discussion
+<a href="http://mentalpandiculation.com/2011/01/word-wrap-kata-in-python/">[2]</a></li>
+<li>Ruby styled Regular Expression solution, code
+<a href="http://hg.code-cop.org/ruby-katas/src/tip/kata/word_wrap/20110713/">[3]</a></li>
+<li>Forth, code
+<a href="http://hg.code-cop.org/forth-katas/src/tip/kata/word_wrap/20101129-improved/">[4]</a>
+and feedback in the newsgroup
+<a href="https://groups.google.com/group/comp.lang.forth/browse_thread/thread/f026da51bc4968b2">[5]</a></li>
+<li>Java various solutions, code together with discussion
+<a href="http://blog.code-cop.org/2011/08/word-wrap-kata-variants.html">[6]</a></li>
+</ul>
+<h3 id="different-algorithms">Different Algorithms</h3>
+<p>I (PeterKofler ) did the kata several times in Java and tried a
+different variants each time. The different algorithms have increased
+complexity in code but reduce the number of allocations. See
+<a href="http://blog.code-cop.org/2011/08/word-wrap-kata-variants.html">[6]</a>
+for a detailed analysis of the variants together with code. It&rsquo;s nice to
+see how the solution changes from recursive to tail recursive to a loop
+which can be optimised even further.</p>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/WordWrap.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

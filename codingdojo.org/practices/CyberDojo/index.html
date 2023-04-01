@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>CyberDojo - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/practices/CyberDojo/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/practices/CyberDojo/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        CyberDojo
+        
+      </h1>
+
+      <h2 id="write-your-code-and-tests-in-a-browser">Write Your Code and Tests in a Browser!</h2>
+<p>A while ago I ( <a href="https://codingdojo.org/people/JonJagger">JonJagger</a> ) attended several coding
+dojos. I enjoyed them but noticed it often took a long time to install
+the necessary compilers onto some of the laptops. It occurred to me that
+it should be possible to run a code-dojo entirely within a browser -
+write your code and tests inside a simple web-based editor, submit
+everything to the server whenever you like, the server would run your
+tests for you and return the outcome - green if they all passed, red if
+some failed, yellow if there was a syntax error. As I thought about it I
+realized that this format also offered several extra possibilities. For
+example, if someone had to leave early and take their laptop with them,
+another laptop could instantly substitute for it. So I&rsquo;ve written a
+server! It&rsquo;s called <a href="https://codingdojo.org/CyberDojo">CyberDojo</a> .</p>
+<ul>
+<li><a href="https://codingdojo.org/CyberDojo">CyberDojo</a> server is at <a href="http://www.cyber-dojo.com">http://www.cyber-dojo.com</a></li>
+<li><a href="https://codingdojo.org/CyberDojo">CyberDojo</a> currently supports C#, C++, C, Java,
+Javascript, Objective C, Ruby, Perl, Python, PHP</li>
+<li><a href="https://codingdojo.org/CyberDojo">CyberDojo</a> is open-sourced at
+<a href="http://github.com/JonJagger/cyberdojo">http://github.com/JonJagger/cyberdojo</a> if you want to build your
+own server</li>
+<li><a href="https://codingdojo.org/CyberDojo">CyberDojo</a> extra blurb at
+<a href="http://jonjagger.blogspot.com/p/cyberdojo.html">http://jonjagger.blogspot.com/p/cyberdojo.html</a></li>
+<li><a href="https://codingdojo.org/CyberDojo">CyberDojo</a> video screencast of me doing the Roman
+Numerals kata in Ruby is at <a href="http://vimeo.com/15104374">http://vimeo.com/15104374</a></li>
+</ul>
+<h2 id="coding-collaboration">Coding Collaboration</h2>
+<p>I&rsquo;ve added two extra features to <a href="https://codingdojo.org/CyberDojo">CyberDojo</a> to help promote
+collaboration amongst the <strong>whole group</strong> , rather than solely at the
+laptops (see <a href="https://codingdojo.org/DeLucasLaw">DeLucasLaw</a> )</p>
+<ul>
+<li>A traffic-light displaying the red/green status of all participants.</li>
+<li>Every 5 minutes the server asks the players to rotate.</li>
+</ul>
+<h2 id="software-development-metaphor">Software Development Metaphor</h2>
+<p>A good way to really emphasize collaborative development is to do a
+<a href="https://codingdojo.org/CyberDojo">CyberDojo</a> session as a metaphor for software development.
+Viz</p>
+<ul>
+<li>the kata on each computer represents a feature for a product, with
+the product being the sum of all those features</li>
+<li>if everyone&rsquo;s tests pass all the lights will be green which
+represents a stable releasable build</li>
+<li>if any computer&rsquo;s light is not green, the build is broken and can&rsquo;t
+be released to the client</li>
+</ul>
+<p>Then, periodically, call for a release and watch what happens.</p>
+<h2 id="working-in-pairs-and-alone">Working in Pairs and Alone</h2>
+<p>Another interesting idea is to arrange a pair (or more) of developers at
+each laptop - except one. Because of the frequent rotations, this will
+give all the participants experience of working in pairs most of the
+time but also having the occasional period of working alone.</p>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/practices/CyberDojo.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

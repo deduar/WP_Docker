@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Mastermind - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/Mastermind/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/Mastermind/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Mastermind
+        
+      </h1>
+
+      <p>Difficulty: medium</p>
+<p>Have you ever played
+<a href="https://en.wikipedia.org/wiki/Mastermind_(board_game)">Mastermind</a> ? This game
+where one player, a <em>codemaker</em>, has to choose a secret combination of colored pegs
+and then make it guess to someone else, a <em>codebreaker</em>.  The codemaker is
+answering to each guess attempt of the codebreaker by indicating only the number of
+well placed colors and the number of correct but misplaced colors.</p>
+<p>If you remember playing the game, being the one who guesses is very brain
+demanding, whereas the other player get bored rapidly.</p>
+<h2 id="problem-description">Problem Description</h2>
+<p>The idea of this Kata is to code an algorithm capable of playing this boring
+role: answering the number of well placed and misplaced colors.</p>
+<p>Therefore, your function should return, for a secret and a guessing combination:</p>
+<ul>
+<li>the number of well placed colors</li>
+<li>the number of correct but misplaced colors</li>
+</ul>
+<p>A combination can contain any number of pegs but you&rsquo;d better give the same
+number for the secret and the guessing. You can use any number of colors.</p>
+<h2 id="clues">Clues</h2>
+<ul>
+<li>It&rsquo;s better to start by detecting well placed colors.</li>
+<li>Detecting misplaced colors is about counting them…</li>
+</ul>
+<h2 id="suggested-test-cases">Suggested Test Cases</h2>
+<p>For a secret <code>[blue, red, green, pink]</code> and a guess <code>[yellow, red, blue, purple]</code>
+the answer should be : 1 well placed and 1 misplaced.</p>
+<p>Some other basic examples:</p>
+<pre><code>evaluate([blue], [red]) should return [0, 0]  
+evaluate([blue], [blue]) should return [1, 0]  
+evaluate([red, yellow], [blue, red]) should return [0, 1]  
+</code></pre>
+<p>Take care to start simple and choose wisely the following tests in order to
+have a nice TDD progression…</p>
+<hr>
+<h2 id="comments-from-those-who-are-working-on-this-kata">Comments from those who are working on this Kata</h2>
+<p>Here is a <a href="https://sites.google.com/site/emmanuelgaillot/katas/">tutorial</a> (in french) demonstrating a possible progression to solve this Kata.</p>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/Mastermind.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

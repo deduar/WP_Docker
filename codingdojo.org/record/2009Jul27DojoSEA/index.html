@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>2009Jul27DojoSEA - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/record/2009Jul27DojoSEA/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/record/2009Jul27DojoSEA/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        2009Jul27DojoSEA
+        
+      </h1>
+
+      <pre><code>Problema do placar do boliche (Bruno mandou um PDF retirado de um artigo
+</code></pre>
+<p>cientнfico) Cуdigo em; http: //
+github.com/brunopedroso/bowling_dojo/tree/master</p>
+<p>Bruno e Cйlio:</p>
+<pre><code>    Bruno explica a situaзгo para Cйlio. O Bruno explica a situaзгo para todos os integrantes do dojo. O bruno cria um novo arquivo chamado bowlingTest.rb
+</code></pre>
+<ul>
+<li>
+<p>Tulio e Celio:</p>
+<pre><code>  Escrevem um teste com duas bolas.Criaram o metodo frame, que ja recebe as duas bolas de uma vez. apagaram o metodo throw, que representava uma unica bola. pequeno refactoring para criar um setup do teste, comecaram um teste do spare.
+</code></pre>
+</li>
+<li>
+<p>Tulio e Laurindo:</p>
+<pre><code>  Comeзaram criando o teste para verificar se estava salvando os 2 frames seguidos. Em seguida, criaram o teste para computar um spare. Criou uma variбvel spare para saber se houve spare na jogada anterior e incrementaram o mйtodo frame. Criaram mais um teste para verificar os spares e outro para ver spares consecutivos.
+</code></pre>
+</li>
+<li>
+<p>Laurindo e Adam:</p>
+<pre><code>  Comeзaram escrevendo um teste que verificava o cбlculo do spare quando o resultado й zero. Em seguida, escreveram um teste para regra do strike. Criaram a variavel strike para saber quando houve um strike na jogada anterior.
+</code></pre>
+</li>
+<li>
+<p>Adam e Eduardo:</p>
+<pre><code>  Comeзaram escrevendo um teste que verifica dois strikes respectivamente. E comeзa a discutir sobre o problema, em seguida eles tentam mas encontram novas dificuldades e finaliza o tempo.
+</code></pre>
+</li>
+<li>
+<p>Eduardo e Bruno:</p>
+<pre><code>  Todos discutiram que seria melhor guardar as bolas. Bruno e Eduardo vгo fazer assim. Criaram array e comeзaram a atribuir bolas no frame. Criaram o loop que calcula, no score. Decidiram guardar frames. Estгo transformando campos em variбveis locais. Estavam dando o retorno errado, mas consertaram e os testes passaram.
+</code></pre>
+</li>
+<li>
+<p>Bruno e Celio</p>
+<pre><code>  Mudam a posicao da avaliacao de strike e de spare para serem verificados a partir da jogada atual. Logo depois da inversao o teste falhou. Eles entao fazem a mudanca no bloco for que controla os frames do jogo para conseguirem que for execute corretamente. Estao com um problema de null em alguns frames do form. Fazem as mudancas necessarias para a verificacao do score a partir do frame atual para os frames futuros. Verificam que estao escrevendo muito codigo sem fazer testes. Depois das mudanзas todos os testes passam.
+</code></pre>
+</li>
+</ul>
+<p>retrospectiva: - Foi ruim ter que refatorar um IF-zгo, que a gente ficou
+um bom tempo com os testes falhando&hellip; - Aн tivemos uma discussгo enorme
+sobre a velha questгo do design up-front ou emergente. Algumas pessoas
+acham que a gente poderia ter pensado um pouco mais antes de comeзar. -
+O pessoal achou bom que o dojo rendeu! Quase terminamos o problema em
+uma sessгo! - Foi ruim pq demoramos a comitar&hellip; Ficamos sem o
+histуrico&hellip; :-( - A regra do silкncio nгo foi tгo rнgida, o pessoal
+achou que fluiu bem. - Aumentamos o tempo de 8 pra 10 minutos, o pessoal
+gostou.</p>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/record/2009Jul27DojoSEA.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

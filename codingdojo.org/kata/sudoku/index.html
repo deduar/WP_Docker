@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Sudoku the concurrent resolver - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/sudoku/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/sudoku/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Sudoku the concurrent resolver
+        
+      </h1>
+
+      <p>Inspired from <a href="https://www.agilecoach.net/wp-content/uploads/2014/11/CSP-Presentation.pdf">Thien Que Nguyen and Pascal Van Cauwenberghe</a></p>
+<p>This kata whan to experience TDD and concurrent programming.</p>
+<ul>
+<li>Understand concurrent systems problems and solutions.</li>
+<li>Learn how you can apply Test Driven Design to concurrent code.</li>
+<li>Experience how a parallel computer works and is programmed.</li>
+<li>Discover how simple rules and collaboration can solve complicated problems</li>
+</ul>
+<h2 id="cell-specification">Cell Specification</h2>
+<p>Build a Cell class or struct they follow this rules :</p>
+<ul>
+<li>A Cell expresses which of the numbers 1..9 are possible</li>
+<li>By default every number is possible</li>
+<li>If there is more than one possible number, the value of the cell is unknown</li>
+<li>If exactly one number is possible, the value of the cell is known == number</li>
+<li>If there are no possible numbers there is a contradiction, this is impossible</li>
+</ul>
+<p>A Cell can answer 1 question :</p>
+<ul>
+<li>What is the value of the cell? unknown, number or impossible</li>
+<li>Is X is a possible value ?</li>
+</ul>
+<p>And record one information :</p>
+<ul>
+<li>Number X it&rsquo;s not a possible value.</li>
+</ul>
+<h2 id="grid-specification">Grid Specification</h2>
+<ul>
+<li>A Grid has a name: A, B, C, D, E, F, G, H or I</li>
+<li>A Grid consists of 3x3 Cells</li>
+<li>Cells are addressed as (Row, Column), it&rsquo;s the grid column and row numbers.</li>
+</ul>
+<p>Grid can record one information :</p>
+<ul>
+<li><strong>If</strong> a Cell within a Grid has a known value <strong>Then</strong> no other Cell can have the same value</li>
+</ul>
+<h2 id="region-specification">Region Specification</h2>
+<ul>
+<li>A Region contains a Grid</li>
+<li>A Region has 4 inputs: North, East, South, West</li>
+<li>A Region has 4 outputs: North, East, South, West</li>
+<li>A Region has an output Display</li>
+</ul>
+<p>All regions are organized as follow :</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+</tr>
+<tr>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+</tr>
+<tr>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+</tr>
+</tbody>
+</table>
+<p>The North output of one region if connected with the South input of the corresponding region.</p>
+<p>At west of last column it&rsquo;s the first column and at south of last line it&rsquo;s the first one.</p>
+<p>For exemple</p>
+<pre tabindex="0"><code>                         ^            |
+                         |            |
+                         |            |
+                   /output/north  /input/north  
+                         |            |
+                         |            |
+                         |            v
+                    +----------------------+
+                    |                      |
+--- /input/west ---&gt;|                      |---- /output/east --&gt;
+                    |     Region grid C    |
+&lt;-- /output/west ---|                      |&lt;--- /input/east ----
+                    |                      |
+                    +----------------------+
+                         ^            |
+                         |            |
+                         |            |
+                   /input/south  /output/south  
+                         |            |
+                         |            |
+                         |            v
+
+                         ^            |
+                         |            |
+                         |            |
+                   /output/north  /input/north  
+                         |            |
+                         |            |
+                         |            v
+                    +----------------------+
+                    |                      |
+--- /input/west ---&gt;|                      |---- /output/east --&gt;
+                    |     Region grid F    |
+&lt;-- /output/west ---|                      |&lt;--- /input/east ----
+                    |                      |
+                    +----------------------+
+                         ^            |
+                         |            |
+                         |            |
+                   /input/south  /output/south  
+                         |            |
+                         |            |
+                         |            v
+</code></pre><p>A region is a REST server with 2 routes:</p>
+<p>POST <code>/input/[direction]</code> with direction in (&ldquo;north&rdquo;, &ldquo;east&rdquo;, &ldquo;south&rdquo;, &ldquo;west&rdquo;) and payload :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">row:</span>             <span style="color:#75715e">// immutable
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#960050;background-color:#1e0010">column:</span>          <span style="color:#75715e">// immutable
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#960050;background-color:#1e0010">value:</span>           <span style="color:#75715e">// immutable
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#960050;background-color:#1e0010">uuid:</span>            <span style="color:#75715e">// immutable
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#960050;background-color:#1e0010">nb-of-msg:</span>       <span style="color:#75715e">// modified by last region
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#960050;background-color:#1e0010">path:</span>            <span style="color:#75715e">// modified by last region
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><ul>
+<li><code>nb-of-msg</code> corresponding to the number of received messages by region from start of compute.</li>
+<li><code>path</code> corresponding to the list of regions that treated the message</li>
+</ul>
+<p>POST <code>/init/</code> and payload :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">row:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">column:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">value:</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>When a grid discover a value of a cell</p>
+<ul>
+<li>Send a message (payload)</li>
+<li>To the Display</li>
+<li>And to all output channels</li>
+</ul>
+<p>When a grid receive a message from North or South</p>
+<ul>
+<li>The Grid can’t have Value in that column</li>
+<li>Send the message on the other side</li>
+</ul>
+<p>When a grid receive a message from the East or West</p>
+<ul>
+<li>The Grid can’t have Value in that row</li>
+<li>And Send the message on to the other side</li>
+</ul>
+<p>Exemple:</p>
+<ul>
+<li>Region-C receive the message on /input/south <code>{path: [&quot;F&quot;], row: 1, column: 1, value: 7, uuid: &quot;UUID&quot;, nb-of-msg: 0}</code></li>
+<li>notify all cells in the column 1 the Value 7 is not possible</li>
+<li>Send the message to Region-I on /input/south <code>{path: [&quot;C&quot;], row: 1, column: 1, value: 7, uuid: UUID, nb-of-msg: 9}</code></li>
+</ul>
+<p>Display server is a REST server with 1 route:</p>
+<p>POST <code>/show</code> with payload :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">row:</span>             <span style="color:#75715e">// immutable
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#960050;background-color:#1e0010">column:</span>          <span style="color:#75715e">// immutable
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#960050;background-color:#1e0010">value:</span>           <span style="color:#75715e">// immutable
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#960050;background-color:#1e0010">uuid:</span>            <span style="color:#75715e">// immutable
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#960050;background-color:#1e0010">nb-of-msg:</span>       <span style="color:#75715e">// modified by last region
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#960050;background-color:#1e0010">path:</span>            <span style="color:#75715e">// modified by last region
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div>
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/sudoku.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Eight Queens - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/eight-queens/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/eight-queens/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Eight Queens
+        
+      </h1>
+
+      <h2 id="kata">Kata</h2>
+<p>This kata is based on the classic chess rules. You must put eight chess queens on an 8×8 chessboard such that none of them is able to capture any other using the standard chess queen&rsquo;s moves.</p>
+<p>Tips: you could have only one queen by row and column.</p>
+<h3 id="step-1">Step 1</h3>
+<p>Use multiple TDD loops to build a programm they find all solutions.</p>
+<h3 id="tree-traversal">Tree traversal</h3>
+<ul>
+<li>Rewrite a new programm to use a Depth-first walk.</li>
+<li>Rewrite a new programm to use a Breadth-first walk.</li>
+<li>Compare performances and lisibility</li>
+</ul>
+<h3 id="nontraditional-approaches">Nontraditional approaches</h3>
+<p>In this part we whant to find only one solution.</p>
+<ul>
+<li>Use a genetic algorithms to solve this puzzle.</li>
+<li>Use a minimum-conflicts heuristic to solve this puzzle.</li>
+<li>Use other metaheuristic algorithms like Simulated annealing or random to solve this puzzle.</li>
+<li>Compare performances</li>
+</ul>
+<h3 id="brute-force">Brute-force</h3>
+<ul>
+<li>Build a programm they use brute-force and compare performances</li>
+</ul>
+<h2 id="--spoiler-the-next-part-is-a-technical-solution-">⚠️  Spoiler: the next part is a technical solution ⚠️</h2>
+<h3 id="brute-force-1">Brute-force</h3>
+<h4 id="vertical-and-horizontal-rules">Vertical and horizontal rules</h4>
+<p>Given a chessboard, you can code each line of board by one byte of 8 bits, with 0 for empty cell and 1 for a queen.</p>
+<pre tabindex="0"><code>+---+---+---+---+---+---+---+---+
+| ♛ |   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+---+
+</code></pre><p>Could be encoded by 10000000 i.e 128. To know if 2 row contains 2 quens, it&rsquo;s possible to use the OR operator. For a 8×8 chessboard, you must have only 1 in the result i.e. 255.</p>
+<p>Sample with a 4×4 board</p>
+<pre tabindex="0"><code>+---+---+---+---+
+|   | ♛ |   |   |
++---+---+---+---+
+|   |   |   | ♛ |
++---+---+---+---+
+| ♛ |   |   |   |
++---+---+---+---+
+|   |   | ♛ |   |
++---+---+---+---+
+</code></pre><p>0100 OR 0001 OR 1000 OR 0010 = 1111</p>
+<h4 id="diagonals-rules">Diagonals rules</h4>
+<p>Diagonals could be check with 16bits with one shift by line :</p>
+<pre tabindex="0"><code>+---+---+---+---+                    +---+---+---+---++---+---+---+---+
+|   |   |   | ♛ | Line 0 =&gt; no shift |   |   |   |   ||   |   |   | ♛ |
++---+---+---+---+                    +---+---+---+---++---+---+---+---+
+|   | ♛ |   |   | Line 1 =&gt; 1 shift  |   |   |   |   || ♛ &lt; . |   |   |
++---+---+---+---+                    +---+---+---+---++---+---+---+---+
+|   |   | ♛ |   | Line 2 =&gt; 2 shifts |   |   |   |   || ♛ &lt;   &lt; . |   |
++---+---+---+---+                    +---+---+---+---++---+---+---+---+
+| ♛ |   |   |   | Line 3 =&gt; 3 shifts |   | ♛ &lt;   &lt;   &lt;&lt; . |   |   |   |
++---+---+---+---+                    +---+---+---+---++---+---+---+---+
+</code></pre><p>Could be test with :</p>
+<p>00000001 OR 00001000 OR 00001000 OR 01000000 = 01001001</p>
+<ul>
+<li>Implement a programm they use this optimized check solution to find all solutions by brute-force.</li>
+<li>Compare performance with others implementations</li>
+</ul>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/eight-queens.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

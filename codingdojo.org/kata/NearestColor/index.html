@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Nearest color - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/NearestColor/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/NearestColor/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Nearest color
+        
+      </h1>
+
+      <h2 id="introduction">Introduction</h2>
+<p>A color is composed by an amount of <em>red</em>, <em>green</em> and <em>blue</em>.</p>
+<p>In computer science, a way to represent a color is to compose between these three amount of colors.</p>
+<p>Each amount of color have a presence from <code>0</code> (the color is absent) to <code>255</code> (full presence of color).</p>
+<p>But, because some developers love hexadecimal, they decided to use numbers between <code>0</code> and <code>F</code>. So, <code>00</code> means <code>0</code> in decimal and <code>FF</code> means <code>255</code> in decimal.</p>
+<p>For color composition, the first pair of digits are used for the red, the second pair for the green and last pair for the blue.</p>
+<p>The hexadecimal representation of the colors looks like:</p>
+<ul>
+<li><code>FF0000</code> for <strong>red</strong></li>
+<li><code>00FF00</code> for <strong>green</strong></li>
+<li><code>0000FF</code> for <strong>blue</strong></li>
+</ul>
+<p>But, for the exercice we decided to represent colors with only 3 digits, so the alias will be:</p>
+<ul>
+<li><code>F00</code> for <code>FF0000</code></li>
+<li><code>0F0</code> for <code>00FF00</code></li>
+<li><code>00F</code> for <code>0000FF</code></li>
+</ul>
+<h2 id="part-1-nearest-color">Part 1: nearest color</h2>
+<p>The idea is to use a set of colors (<code>F00</code>, <code>0F0</code>, <code>00F</code>) and guess the nearest color from the set.</p>
+<p>Example: the nearest color of <code>F42</code> is <code>F00</code>.</p>
+<h2 id="part-2-equality">Part 2: equality</h2>
+<p>The idea is to list all the colors in equality cases, because, sometimes, more than one color is the nearest color.</p>
+<p>Example: because yellow <code>FF0</code> is composed by red <code>F00</code> and green <code>0F0</code>, the nearest colors are both of them.</p>
+<h2 id="bonus">Bonus</h2>
+<ul>
+<li>Do the same with 6 digit hexadecimal colors</li>
+<li>Find the farthest color</li>
+<li>Compare with <a href="https://www.w3.org/TR/css-color-3/#html4">color keywords</a></li>
+</ul>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/NearestColor.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Elephant Carpaccio - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/elephant-carpaccio/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/elephant-carpaccio/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Elephant Carpaccio
+        
+      </h1>
+
+      <p>Largely inspired by : <a href="https://docs.google.com/document/d/1Ls6pTmhY_LV8LwFiboUXoFXenXZl0qVZWPZ8J4uoqpI">https://docs.google.com/document/d/1Ls6pTmhY_LV8LwFiboUXoFXenXZl0qVZWPZ8J4uoqpI</a></p>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>Break into teams of 2-3 people, one workstation per team.</li>
+<li>Preparation - Each team writes down on paper the 10-20 demo-able user stories (&ldquo;slices&rdquo;) they will develop and possibly demo. Each should be doable in 3-8 minutes. No slice is just mockup of UI, creation of a data table or data structure. All demos show real input &amp; output (not test harness).</li>
+<li>Discussion - Instructor/facilitator leads discussion of the slices, what is and isn&rsquo;t acceptable, solicits ways to slice finer.</li>
+<li>Development - A fixed time-box of 40 minutes, five 8-minute development sprints, clock does not stop. At the end of each sprint, each team shows its product to another team.</li>
+<li>Debrief</li>
+</ol>
+<h2 id="product">Product</h2>
+<p>We manufacture a point of sale capable of issuing cash register tickets.</p>
+<p>Accept 4 inputs from the user for one or many items :</p>
+<ul>
+<li>Label of item</li>
+<li>Quantity of item</li>
+<li>Price of item</li>
+<li>letter state code</li>
+</ul>
+<p>With a given 2 letters state code, we can compute the tax rate</p>
+<p>With total price (without tax) we can compute a discount see tabular at end of subject.</p>
+<p>Output the recipe like :</p>
+<pre tabindex="0"><code>label of item     Quantity   Unit price   Total price
+label of item     Quantity   Unit price   Total price
+
+-----------------------------------------------------
+Total without taxes                             XXXXX
+Discount X%                                       -YYY
+Tax Y%                                           +ZZZ
+-----------------------------------------------------
+Total price                                    XXXXXX
+</code></pre><table>
+<thead>
+<tr>
+<th>Order value</th>
+<th>Discount rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt; 1000</td>
+<td>3%</td>
+</tr>
+<tr>
+<td>&gt; 5000</td>
+<td>5%</td>
+</tr>
+<tr>
+<td>&gt; 7000</td>
+<td>7%</td>
+</tr>
+<tr>
+<td>&gt; 10000</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>&gt; 50000</td>
+<td>15%</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Tax rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UT</td>
+<td>6.85%</td>
+</tr>
+<tr>
+<td>NV</td>
+<td>8.00%</td>
+</tr>
+<tr>
+<td>TX</td>
+<td>6.25%</td>
+</tr>
+<tr>
+<td>AL</td>
+<td>4.00%</td>
+</tr>
+<tr>
+<td>CA</td>
+<td>8.25%</td>
+</tr>
+</tbody>
+</table>
+<p>For other state tax rate see : <a href="https://en.wikipedia.org/wiki/Sales_taxes_in_the_United_States">https://en.wikipedia.org/wiki/Sales_taxes_in_the_United_States</a></p>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/elephant-carpaccio.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

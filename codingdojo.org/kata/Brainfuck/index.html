@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Brainfuck - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/Brainfuck/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/Brainfuck/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Brainfuck
+        
+      </h1>
+
+      <h2 id="introduction">Introduction</h2>
+<p>This exercise is based on the <a href="https://en.wikipedia.org/wiki/Brainfuck">Brainfuck langage</a>.</p>
+<p>Brainfuck is an esoteric programming language created in 1993 by Urban Müller. It&rsquo;s a minimalist langage composed of one character instructions while remaining <a href="https://en.wikipedia.org/wiki/Turing_completeness">Turing complete</a>.</p>
+<h2 id="problem-description">Problem Description</h2>
+<p>Create an interpreter, which, given a valid Brainfuck program execute it and return the memory state at the end of it.</p>
+<p>The Brainfuck langage consists of :</p>
+<ul>
+<li>a program;</li>
+<li>a one-dimensional array of at least 30,000 byte cells initialized to zero, representing ASCII characters;</li>
+<li>a movable data pointer (initialized to point to the leftmost byte of the array).</li>
+</ul>
+<p>The program is composed of 8 different commands :</p>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>Increment the byte at the data pointer.</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Decrement the byte at the data pointer.</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Increment the data pointer.</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Decrement the data pointer.</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>Output the byte at the data pointer (ASCII format)</td>
+</tr>
+<tr>
+<td><code>,</code></td>
+<td>Accept one byte of input (ASCII format), storing its value in the byte at the data pointer.</td>
+</tr>
+<tr>
+<td><code>[</code></td>
+<td>If the byte at the data pointer is zero jump it forward to the command after the matching ] command.</td>
+</tr>
+<tr>
+<td><code>]</code></td>
+<td>If the byte at the data pointer is nonzero jump it back to the command after the matching [ command.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="suggested-steps">Suggested steps</h3>
+<ol>
+<li>Implement <code>+ - &gt; &lt;</code> commands to manage memory.</li>
+<li>Implement <code>. ,</code> to manage I/O.</li>
+<li>Implement <code>[ ]</code> to manage jump/loops.</li>
+</ol>
+<h3 id="additional-constraints">Additional constraints</h3>
+<ul>
+<li>When the data pointer is on the first bite and you use the <code>&lt;</code> command the data pointer is moved to the last bite of the array.</li>
+<li>Value stored in the array cannot be negative, if you decrement from 0 you go back to 255.</li>
+<li>Instructions should be easy to rename if I want to change the syntax to <a href="https://github.com/omkarjc27/OooWee">OooWee</a> from Rick and Morty.</li>
+<li>It should be easy to add new instructions for example :
+<ul>
+<li><code>!</code> : goes directly to the end of the memory array.</li>
+</ul>
+</li>
+</ul>
+<hr>
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/Brainfuck.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

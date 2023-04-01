@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>ORM - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/orm/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/orm/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        ORM
+        
+      </h1>
+
+      <h2 id="kata">Kata</h2>
+<h3 id="same-object-in-database-and-business">Same object in database and business</h3>
+<p>Write a contacts program they use an ORM to read and write Persons from an sqlite3 database</p>
+<p>Person has 3 attributes :</p>
+<ul>
+<li>Name</li>
+<li>Surname</li>
+<li>Birth date</li>
+</ul>
+<h3 id="tests-db-and-production-db">Tests DB and production DB</h3>
+<p>we want to have one test DB named <code>tests.db</code> and one production db file set by environment variable <code>DB_URL</code></p>
+<p>In production Data base we have all this contacts :</p>
+<ul>
+<li>Elon Musk: June 28, 1971</li>
+<li>Kamala Harris: October 20, 1964</li>
+<li>Joe Biden: November 20, 1942</li>
+<li>Greta Thunberg: January 3, 2003</li>
+<li>Donald Trump: June 14, 1946</li>
+<li>Angela Merkel: July 17, 1954</li>
+<li>Barack Obama: August 4, 1961</li>
+<li>Mark Zuckerberg: May 14, 1984</li>
+<li>Jeff Bezos: January 12, 1964</li>
+</ul>
+<h3 id="version-of-schema">Version of schema</h3>
+<p>add a version schema in your code and database</p>
+<h3 id="migration">Migration</h3>
+<p>Add attribute email and manage the production migration database. The migration should be automatic in 2 ways :</p>
+<ul>
+<li>if code version schema is under the production database schema the program can revert the migration</li>
+<li>if code version schema is upper the production database schema the program apply the migrations</li>
+</ul>
+<h3 id="one-object-for-database-and-one-for-business">One object for database and one for business</h3>
+<p>Add a business Person value object they has an address attribute with these rules:</p>
+<ul>
+<li>The address in Business Person object is only the last address of person</li>
+<li>In database we want to keep the addresses history, to do that we will build a new table with 3 attributes, the id of person, the creation date and the address</li>
+</ul>
+<h3 id="relation-one-2-one">Relation one 2 one</h3>
+<p>A person has an unique National Identifier, add the national unique number structure build like in France with :</p>
+<ul>
+<li>gender</li>
+<li>year of birth</li>
+<li>month of birth</li>
+<li>id of city</li>
+<li>rank</li>
+<li>check sum</li>
+</ul>
+<h3 id="relation-one-to-many">Relation one to many</h3>
+<p>A Person can know have many phone numbers, add a collections of phones numbers as attribute to Person and a new table Phones in database</p>
+<h3 id="relation-many-to-many">Relation many To many</h3>
+<p>A person has 2 parents and 0 or more children, manage that in your business and in your database.</p>
+<h3 id="inheritance">Inheritance</h3>
+<p>We have now 2 types of persons:</p>
+<ul>
+<li>Student with attributes university, academic degree</li>
+<li>Employee with attributes office, date hired and salary</li>
+</ul>
+<p>Student and Employee extends Person.</p>
+<p>Save all this information in your database.</p>
+<h3 id="production-database">Production database</h3>
+<p>Use a postgres or mysql as Production database.</p>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/orm.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

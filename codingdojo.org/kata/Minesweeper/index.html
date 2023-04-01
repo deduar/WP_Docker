@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Minesweeper - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/Minesweeper/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/Minesweeper/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Minesweeper
+        
+      </h1>
+
+      <h2 id="about-this-kata">About this Kata</h2>
+<p>Kata originated here: acm.uva.es/p/v101/10189.html</p>
+<p>Difficulty: Easy</p>
+<h2 id="problem-description">Problem Description</h2>
+<p>Have you ever played Minesweeper? It&rsquo;s a cute little game which comes
+within a certain Operating System whose name we can&rsquo;t really remember.
+Well, the goal of the game is to find all the mines within an MxN field.
+To help you, the game shows a number in a square which tells you how
+many mines there are adjacent to that square. For instance, take the
+following 4x4 field with 2 mines (which are represented by an *
+character):</p>
+<pre><code>*...
+....
+.*..
+....
+</code></pre>
+<p>The same field including the hint numbers described above would look
+like this:</p>
+<pre><code>*100
+2210
+1*10
+1110
+</code></pre>
+<p>You should write a program that takes input as follows:</p>
+<p>The input will consist of an arbitrary number of fields. The first line
+of each field contains two integers n and m (0 &lt; n,m &lt;= 100) which
+stands for the number of lines and columns of the field respectively.
+The next n lines contains exactly m characters and represent the field.
+Each safe square is represented by an &ldquo;.&rdquo; character (without the quotes)
+and each mine square is represented by an &ldquo;*&rdquo; character (also without
+the quotes). The first field line where n = m = 0 represents the end of
+input and should not be processed.</p>
+<p>Your program should produce output as follows:</p>
+<p>For each field, you must print the following message in a line alone:</p>
+<p>Field #x:</p>
+<p>Where x stands for the number of the field (starting from 1). The next n
+lines should contain the field with the &ldquo;.&rdquo; characters replaced by the
+number of adjacent mines to that square. There must be an empty line
+between field outputs.</p>
+<h2 id="clues">Clues</h2>
+<p>As you may have already noticed, each square may have at most 8 adjacent
+squares.</p>
+<p><strong>Suggested Test Cases</strong></p>
+<p>This is the acceptance test input:</p>
+<pre><code>4 4
+*...
+....
+.*..
+....
+3 5
+**...
+.....
+.*...
+0 0
+</code></pre>
+<p>and output:</p>
+<pre><code>Field #1:
+*100
+2210
+1*10
+1110
+
+Field #2:
+**100
+33200
+1*100
+</code></pre>
+<hr>
+<h2 id="comments-from-those-who-are-working-on-this-kata">Comments from those who are working on this Kata</h2>
+<p>This Kata was tackled at the <a href="https://codingdojo.org/dojo/SaoPauloDojo">SaoPauloDojo</a> and
+results described <a href="https://codingdojo.org/record/2007Aug29SPDojo">here</a> .</p>
+<p>The Kata was done by <a href="https://codingdojo.org/dojo/YouDevise">YouDevise</a> and results described
+at tinyurl.com/6falq7</p>
+<p>The Kata was done by Songkick.com and the test framework and solution
+posted at
+github.com/mattwynne/software-craftsmanship-katas/tree/master/minesweeper</p>
+<p>Macluq has posted his solution on Github :
+<a href="https://github.com/macluq/KataMinesweeper">https://github.com/macluq/KataMinesweeper</a></p>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/Minesweeper.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

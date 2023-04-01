@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Diamond - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/solution/Diamond/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/solution/Diamond/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Diamond
+        
+      </h1>
+
+      <h1 id="python">Python</h1>
+<pre><code>alphabet = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot;, &quot;G&quot;, &quot;H&quot;, &quot;I&quot;, &quot;J&quot;, &quot;K&quot;, &quot;L&quot;, &quot;M&quot;, &quot;N&quot;, &quot;O&quot;, &quot;P&quot;, &quot;Q&quot;, &quot;R&quot;,&quot;S&quot;, &quot;T&quot;, &quot;U&quot;, &quot;V&quot;, &quot;W&quot;, &quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;];
+input = &quot;E&quot;
+
+index = alphabet.index(input)
+
+
+arr = alphabet[1:index] + alphabet[index:0:-1]
+
+total = index*2 + 1
+edge = index - 1
+
+print(&quot; &quot;*index + &quot;A&quot; + &quot; &quot;*index)
+for i in arr:
+    print(&quot; &quot; *abs(edge) + i + &quot; &quot; * (total - 2 * abs(edge) - 2) + i + &quot; &quot; * abs(edge))
+    edge = edge - 1
+print(&quot; &quot; * index + &quot;A&quot; + &quot; &quot; * index)
+</code></pre>
+<h1 id="rust">Rust</h1>
+<p>This is the more accurate solution for the moment for the <a href="https://codingdojo.org/kata/Diamond">Diamond kata</a>.
+Feel free to create a merge request on the <a href="https://gitlab.com/codingdojo-org/codingdojo.org">codingdojo repository</a> to improve it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Rust" data-lang="Rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    println!(<span style="color:#e6db74">&#34;{}&#34;</span>, make_diamond(<span style="color:#e6db74">&#39;z&#39;</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">make_diamond</span>(character: <span style="color:#66d9ef">char</span>) -&gt; String {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> goal_offset <span style="color:#f92672">=</span> char_offset(character);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> base <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> character.is_uppercase() {<span style="color:#e6db74">&#39;A&#39;</span> <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">u8</span>} <span style="color:#66d9ef">else</span> {<span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">u8</span>};
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> diamond <span style="color:#f92672">=</span> String::new();
+</span></span><span style="display:flex;"><span>    diamond <span style="color:#f92672">+=</span> create_base(character).as_str();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">..</span>goal_offset {
+</span></span><span style="display:flex;"><span>        diamond <span style="color:#f92672">+=</span> create_line((base <span style="color:#f92672">+</span> i) <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">char</span>, character).as_str();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#66d9ef">in</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">..</span>goal_offset <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>).rev() {
+</span></span><span style="display:flex;"><span>        diamond <span style="color:#f92672">+=</span> create_line((base <span style="color:#f92672">+</span> i) <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">char</span>, character).as_str();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    diamond <span style="color:#f92672">+=</span> create_base(character).as_str();
+</span></span><span style="display:flex;"><span>    diamond
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">create_line</span>(character: <span style="color:#66d9ef">char</span>, goal: <span style="color:#66d9ef">char</span>) -&gt; String {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> line <span style="color:#f92672">=</span> String::new();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> current_char_offset <span style="color:#f92672">=</span> char_offset(character);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> left_spaces <span style="color:#f92672">=</span> char_offset(goal) <span style="color:#f92672">-</span> current_char_offset;
+</span></span><span style="display:flex;"><span>    line <span style="color:#f92672">=</span> make_spaces(left_spaces, line);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    line.push(character);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> inter_spaces <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> (current_char_offset <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>    line <span style="color:#f92672">=</span> make_spaces(inter_spaces, line);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    line.push(character);
+</span></span><span style="display:flex;"><span>    line.push(<span style="color:#e6db74">&#39;\n&#39;</span>);
+</span></span><span style="display:flex;"><span>    line
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">make_spaces</span>(number: <span style="color:#66d9ef">u8</span>, <span style="color:#66d9ef">mut</span> string: String) -&gt; String {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">..</span>number {
+</span></span><span style="display:flex;"><span>        string.push(<span style="color:#e6db74">&#39; &#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    string
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">create_base</span>(character: <span style="color:#66d9ef">char</span>) -&gt; String {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> string <span style="color:#f92672">=</span> String::new();
+</span></span><span style="display:flex;"><span>    string <span style="color:#f92672">=</span> make_spaces(char_offset(character) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, string);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> character.is_uppercase() {
+</span></span><span style="display:flex;"><span>        string.push_str(<span style="color:#e6db74">&#34;A\n&#34;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        string.push_str(<span style="color:#e6db74">&#34;a\n&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    string
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">char_offset</span>(character: <span style="color:#66d9ef">char</span>) -&gt; <span style="color:#66d9ef">u8</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> base <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> character.is_uppercase() { <span style="color:#e6db74">&#39;A&#39;</span> } <span style="color:#66d9ef">else</span> { <span style="color:#e6db74">&#39;a&#39;</span> };
+</span></span><span style="display:flex;"><span>        character <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">u8</span> <span style="color:#f92672">-</span> base <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">u8</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#[cfg(test)]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">mod</span> tests {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">use</span> <span style="color:#66d9ef">crate</span>::char_offset;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">char_offset_uppercase_legal</span>() {
+</span></span><span style="display:flex;"><span>        assert_eq!(char_offset(<span style="color:#e6db74">&#39;A&#39;</span>), <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        assert_eq!(char_offset(<span style="color:#e6db74">&#39;E&#39;</span>), <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>        assert_eq!(char_offset(<span style="color:#e6db74">&#39;Z&#39;</span>), <span style="color:#ae81ff">26</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">char_offset_lowercase_legal</span>() {
+</span></span><span style="display:flex;"><span>        assert_eq!(char_offset(<span style="color:#e6db74">&#39;a&#39;</span>), <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        assert_eq!(char_offset(<span style="color:#e6db74">&#39;e&#39;</span>), <span style="color:#ae81ff">5</span>);
+</span></span><span style="display:flex;"><span>        assert_eq!(char_offset(<span style="color:#e6db74">&#39;z&#39;</span>), <span style="color:#ae81ff">26</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">use</span> <span style="color:#66d9ef">crate</span>::create_base;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">create_base_A</span>() {
+</span></span><span style="display:flex;"><span>        assert_eq!(create_base(<span style="color:#e6db74">&#39;A&#39;</span>), String::from(<span style="color:#e6db74">&#34;A\n&#34;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">create_base_B</span>() {
+</span></span><span style="display:flex;"><span>        assert_eq!(create_base(<span style="color:#e6db74">&#39;B&#39;</span>), String::from(<span style="color:#e6db74">&#34; A\n&#34;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">create_base_C</span>() {
+</span></span><span style="display:flex;"><span>        assert_eq!(create_base(<span style="color:#e6db74">&#39;C&#39;</span>), String::from(<span style="color:#e6db74">&#34;  A\n&#34;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">use</span> <span style="color:#66d9ef">crate</span>::create_line;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">create_line_previous_spaces_B</span>() {
+</span></span><span style="display:flex;"><span>        assert_eq!(create_line(<span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;B&#39;</span>), String::from(<span style="color:#e6db74">&#34;B B\n&#34;</span>));
+</span></span><span style="display:flex;"><span>        assert_eq!(create_line(<span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>), String::from(<span style="color:#e6db74">&#34; B B\n&#34;</span>));
+</span></span><span style="display:flex;"><span>        assert_eq!(create_line(<span style="color:#e6db74">&#39;B&#39;</span>, <span style="color:#e6db74">&#39;E&#39;</span>), String::from(<span style="color:#e6db74">&#34;   B B\n&#34;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">create_line_middle_spaces</span>() {
+</span></span><span style="display:flex;"><span>        assert_eq!(create_line(<span style="color:#e6db74">&#39;C&#39;</span>, <span style="color:#e6db74">&#39;C&#39;</span>), String::from(<span style="color:#e6db74">&#34;C   C\n&#34;</span>));
+</span></span><span style="display:flex;"><span>        assert_eq!(create_line(<span style="color:#e6db74">&#39;D&#39;</span>, <span style="color:#e6db74">&#39;D&#39;</span>), String::from(<span style="color:#e6db74">&#34;D     D\n&#34;</span>));
+</span></span><span style="display:flex;"><span>        assert_eq!(create_line(<span style="color:#e6db74">&#39;E&#39;</span>, <span style="color:#e6db74">&#39;E&#39;</span>), String::from(<span style="color:#e6db74">&#34;E       E\n&#34;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">use</span> <span style="color:#66d9ef">crate</span>::make_spaces;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">make_spaces_no</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> string <span style="color:#f92672">=</span> String::new();
+</span></span><span style="display:flex;"><span>        assert_eq!(make_spaces(<span style="color:#ae81ff">0</span>, string), String::from(<span style="color:#e6db74">&#34;&#34;</span>)); 
+</span></span><span style="display:flex;"><span>    } 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">make_spaces_five</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> string <span style="color:#f92672">=</span> String::new();
+</span></span><span style="display:flex;"><span>        assert_eq!(make_spaces(<span style="color:#ae81ff">5</span>, string), String::from(<span style="color:#e6db74">&#34;     &#34;</span>)); 
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">use</span> <span style="color:#66d9ef">crate</span>::make_diamond;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">make_diamond_A</span>() {
+</span></span><span style="display:flex;"><span>        assert_eq!(make_diamond(<span style="color:#e6db74">&#39;A&#39;</span>), String::from(<span style="color:#e6db74">&#34;A\nA\n&#34;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">make_diamond_a</span>() {
+</span></span><span style="display:flex;"><span>        assert_eq!(make_diamond(<span style="color:#e6db74">&#39;a&#39;</span>), String::from(<span style="color:#e6db74">&#34;a\na\n&#34;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">make_diamond_B</span>() {
+</span></span><span style="display:flex;"><span>        assert_eq!(make_diamond(<span style="color:#e6db74">&#39;B&#39;</span>), String::from(<span style="color:#e6db74">&#34; A\nB B\n A\n&#34;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#[test]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">make_diamond_C</span>() {
+</span></span><span style="display:flex;"><span>        assert_eq!(make_diamond(<span style="color:#e6db74">&#39;C&#39;</span>),
+</span></span><span style="display:flex;"><span>                   String::from(<span style="color:#e6db74">&#34;  A\n B B\nC   C\n B B\n  A\n&#34;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/solution/Diamond.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>RSA - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/rsa/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/rsa/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        RSA
+        
+      </h1>
+
+      <h2 id="origin">Origin</h2>
+<p>RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem that is widely used for secure data transmission. It is also one of the oldest.</p>
+<h2 id="kata">Kata</h2>
+<p>In this kata we will encrypt and decrypt a message with RSA algorythm.</p>
+<h3 id="build-keys">Build keys</h3>
+<ul>
+<li>Find 2 primes numbers <code>p</code> and <code>q</code> such that <code>(2^24 + 1) &lt; p × q &lt; 2^32</code></li>
+<li>Compute <code>N = p × q</code></li>
+<li>Compute <code>n = (p − 1) × (q − 1)</code></li>
+<li>Choose <code>c</code> a coprime number with <code>n</code> such that <code>1 &lt; c &lt; n</code></li>
+</ul>
+<p><code>(N, c)</code> is the public key</p>
+<ul>
+<li>Determine <code>d</code> as <code>d ≡ c^−1 (mod n)</code> that is, <code>d</code> is the modular multiplicative inverse of <code>c modulo n</code> i.e. <code>c*d mod n == 1</code>. <code>d</code> can be computed efficiently by using the Extended Euclidean algorithm.</li>
+</ul>
+<p><code>(N, d)</code> is the private key</p>
+<h3 id="encrypt-the-message">Encrypt the message</h3>
+<p>Make a function they:</p>
+<ul>
+<li>take a message in input</li>
+<li>slice the message in peaces of exactly 3 bytes</li>
+<li>for each peaces as integer <code>a</code> compute <code>a^c mod N</code>, you will obtain a 4 bytes integer</li>
+<li>the concatenation of each of this numbers is the encrypted message</li>
+</ul>
+<h3 id="decrypt-the-message">Decrypt the message</h3>
+<p>Make a function they:</p>
+<ul>
+<li>take an encrypted message in input</li>
+<li>slice the message in peaces of exactly 4 bytes</li>
+<li>for each peaces as integer <code>a</code> compute <code>a^d mod N</code>, you will obtain a 3 bytes integer</li>
+<li>the concatenation of each of this numbers is the original message</li>
+</ul>
+<h3 id="transmit-the-message">Transmit the message</h3>
+<p>For transmition using mail or other messaging tools, we must have a function they encode the encrypted message in a readable message.</p>
+<p>Make a function they take an encrypted message in input and they output a string with only readable chars like base64 encode. Do the revert function.</p>
+<h3 id="sample">Sample</h3>
+<ul>
+<li>p = 51581, q = 60101</li>
+<li>N = 3100069681</li>
+<li>n = 3099958000</li>
+<li>c = 66797</li>
+</ul>
+<p>Public key : (3100069681, 66797)</p>
+<ul>
+<li>d = 1336940133</li>
+</ul>
+<p>Private key : (3100069681, 1336940133)</p>
+<ul>
+<li>Message = &ldquo;Hello world!&rdquo;: <code>0x48 0x65 0x6c 0x6c 0x6f 0x20 0x77 0x6f 0x72 0x6c 0x64 0x21</code></li>
+<li>Sliced hexadecimal: <code>0x48656c 0x6c6f20 0x776f72 0x6c6421</code></li>
+<li>Sliced decimal: <code>4744556 7106336 7827314 7103521</code></li>
+<li>Encoded message decimal: <code>352431401 2267192425 538638606 1131048795</code></li>
+<li>Encoded message hexadecimal: <code>0x1501AD29 0x87229C69 0x201AF90E 0x436A6F5B</code></li>
+<li>Encoded message in base64: <code>FQGtKYcinGkgGvkOQ2pvWw==</code></li>
+</ul>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/rsa.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

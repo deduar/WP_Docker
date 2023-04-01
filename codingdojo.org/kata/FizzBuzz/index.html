@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>FizzBuzz - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/FizzBuzz/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/FizzBuzz/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        FizzBuzz
+        
+      </h1>
+
+      <h2 id="about-this-kata">About this Kata</h2>
+<p>This Kata was posted here by someone anonymously. Michael Feathers and
+<a href="https://codingdojo.org/people/EmilyBache">EmilyBache</a> performed it at agile2008 when
+competing in &ldquo;Programming with the stars&rdquo; in python, in 4 minutes.</p>
+<p>Difficulty: Easy Good for teaching: <a href="https://codingdojo.org/TestDrivenDevelopment">TDD</a> ,
+<a href="https://codingdojo.org/BabySteps">BabySteps</a></p>
+<h2 id="problem-description">Problem Description</h2>
+<p>Imagine the scene. You are eleven years old, and in the five minutes
+before the end of the lesson, your Maths teacher decides he should make
+his class more &ldquo;fun&rdquo; by introducing a &ldquo;game&rdquo;. He explains that he is
+going to point at each pupil in turn and ask them to say the next number
+in sequence, starting from one. The &ldquo;fun&rdquo; part is that if the number is
+divisible by three, you instead say &ldquo;Fizz&rdquo; and if it is divisible by
+five you say &ldquo;Buzz&rdquo;. So now your maths teacher is pointing at all of
+your classmates in turn, and they happily shout &ldquo;one!&rdquo;, &ldquo;two!&rdquo;, &ldquo;Fizz!&rdquo;,
+&ldquo;four!&rdquo;, &ldquo;Buzz!&rdquo;&hellip; until he very deliberately points at you, fixing you
+with a steely gaze&hellip; time stands still, your mouth dries up, your palms
+become sweatier and sweatier until you finally manage to croak &ldquo;Fizz!&rdquo;.
+Doom is avoided, and the pointing finger moves on.</p>
+<p>So of course in order to avoid embarassment infront of your whole class,
+you have to get the full list printed out so you know what to say. Your
+class has about 33 pupils and he might go round three times before the
+bell rings for breaktime. Next maths lesson is on Thursday. Get coding!</p>
+<p>Write a program that prints the numbers from 1 to 100. But for multiples
+of three print &ldquo;Fizz&rdquo; instead of the number and for the multiples of
+five print &ldquo;Buzz&rdquo;. For numbers which are multiples of both three and
+five print &ldquo;FizzBuzz &ldquo;.</p>
+<p>Sample output:</p>
+<pre><code>1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+16
+17
+Fizz
+19
+Buzz
+... etc up to 100
+</code></pre>
+<h2 id="stage-2---new-requirements">Stage 2 - new requirements</h2>
+<ul>
+<li>A number is fizz if it is divisible by 3 or if it has a 3 in it</li>
+<li>A number is buzz if it is divisible by 5 or if it has a 5 in it</li>
+</ul>
+<p>For exemple :</p>
+<ul>
+<li><code>53</code> should return <code>FizzBuzz</code> (contain 5 and 3)</li>
+<li><code>35</code> should return <code>FizzBuzzBuzz</code> (contain 3 and 5 and it divided by 5)</li>
+</ul>
+<h2 id="comments-from-those-who-are-working-on-this-kata">Comments from those who are working on this Kata</h2>
+<p>(Comment from <a href="https://codingdojo.org/people/MikeMinutillo">MikeMinutillo</a> ) The best use of
+the <a href="https://codingdojo.org/kata/FizzBuzz">KataFizzBuzz</a> is to introduce the concepts of TDD
+and <a href="https://codingdojo.org/BabySteps">BabySteps</a> to a new <a href="https://codingdojo.org/CodingDojo">CodingDojo</a> . In my
+case, I work with many clever people who don&rsquo;t do alot of automated
+testing and can&rsquo;t see how it could work. There are heaps of different
+ways to implement this <a href="https://codingdojo.org/kata/FizzBuzz">KataFizzBuzz</a> problem and it&rsquo;s
+easy to throw in new requirements (at the second step here does). I
+actually did learn TDD using FizzBuzz (I went crazy with it too. Do a
+search for Enterprise FizzBuzz to see the madness)</p>
+<hr>
+<p>(Comment from <a href="https://codingdojo.org/people/ThomasNilsson">ThomasNilsson</a> ) I tried this Kata
+with a group of newcommers to TDD and it worked out beautifully. It is a
+very simple problem so people are not thrown into ProblemSolvingMode
+which is common with e.g. the <a href="https://codingdojo.org/kata/Bowling">KataBowling</a> , which has
+previously been my favourite.</p>
+<p>Yet it is sufficient to let you talk about OpenYourMindToDesignFirst ,
+ListYourTests , <a href="https://codingdojo.org/BabySteps">BabySteps</a> ,
+TheSimplestThingThatCouldPossiblyWork , HurryToGreen , Refactor and
+CodeSmells . It has a nice flow to it, no &ldquo;humps&rdquo; like again the
+<a href="https://codingdojo.org/kata/Bowling">KataBowling</a> . So this is my new favorite for
+introducing TDD.</p>
+<p>I also tried adding the requirement that the filtering (Divisible by 3
+=&gt; &ldquo;Fizz&rdquo;) should be defined outside of the class so that the concept
+of a Filter is required. You can do that both initially and as an added
+complexity at the end.</p>
+<p>Here is my <a href="https://codingdojo.org/solution/KataFizzBuzzSolution">KataFizzBuzzSolution</a> .</p>
+<hr>
+<p>(Comment from <a href="https://codingdojo.org/people/IlkerCetinkaya">IlkerCetinkaya</a> ) We tackled this
+Kata in our very first Dojo ( <a href="https://codingdojo.org/dojo/MucNetDojo">MucNetDojo</a> ). It&rsquo;s a
+very good starter and we all enjoyed the simplicity. The easiness allows
+you to talk a little more about TDD, all the pro&rsquo;s and con&rsquo;s alongside.
+We did <a href="https://codingdojo.org/kata/FizzBuzz">KataFizzBuzz</a> with a group of hobbyists and
+pro&rsquo;s. The low logical complexity added value to teaming as well. I
+think we&rsquo;ve chosen the right Kata to start with.</p>
+<hr>
+<p>(Comment from Jonas Follesř) We solved this as our first Kata at
+Trondheim Coding Dojo. Our solution (.NET) is available at
+<a href="http://github.com/follesoe/FizzBuzzKata">http://github.com/follesoe/FizzBuzzKata</a> - Excellent introduction Kata.</p>
+<hr>
+<p>(Comment from <a href="https://codingdojo.org/people/RonRomero">RonRomero</a> ) I used this kata to help
+teach myself Android development. I finished the standard <a href="http://developer.android.com/guide/tutorials/hello-world.html">[Android
+Hello
+World]</a>
+, but the <a href="http://developer.android.com/resources/tutorials/notepad/index.html">[next sample
+app]</a>
+was too huge and complex. So I worked thru FizzBuzz as the second step
+in learning the Android. I wrote it up at
+<a href="http://ziroby.wrodpress.com/2010/05/23/tdd-fizzbuzz-on-the-android/">http://ziroby.wrodpress.com/2010/05/23/tdd-fizzbuzz-on-the-android/</a></p>
+<hr>
+<p>(Comment from <a href="https://codingdojo.org/people/LaurentLaffont">LaurentLaffont</a> ) Done in a
+coding-dojo with Pharo. Easy, great for teaching TDD. A
+<a href="https://codingdojo.org/solution/KataFizzBuzzSmalltalkSolution">KataFizzBuzzSmalltalkSolution</a>
+.</p>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/FizzBuzz.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

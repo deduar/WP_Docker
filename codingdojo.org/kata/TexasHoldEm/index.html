@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>Texas HoldEm - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/kata/TexasHoldEm/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/kata/TexasHoldEm/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        Texas HoldEm
+        
+      </h1>
+
+      <p>by Matthew D Moss, blatantly stolen from <a href="https://www.rubyquiz.com/quiz24.html">www.rubyquiz.com/quiz24.html</a></p>
+<p>If you want to try this Kata for yourself or at your dojo meeting, read
+the problem description and see if the Kata appeals to you. The rest is
+commentary and helpful clues for if you get stuck solving it. I would
+recommend trying the Kata for yourself before reading too much of it.
+For an easier kata, try <a href="https://codingdojo.org/kata/PokerHands">KataPokerHands</a> first.</p>
+<p>Difficulty: hard</p>
+<h2 id="problem-description">Problem description</h2>
+<p>You work for a cable network; specifically, you are the resident hacker
+for a Texas Hold&rsquo;Em Championship show.</p>
+<p>The show&rsquo;s producer has come to you for a favor. It seems the
+play-by-play announcers just can&rsquo;t think very fast. All beauty, no
+brains. The announcers could certainly flap their jaws well enough, if
+they just knew what hands the players were holding and which hand won
+the round. Since this is live TV, they need those answers quick. Time to
+step up to the plate. Bob, the producer, explains what you need to do.</p>
+<p>BOB: Each player&rsquo;s cards for the round will be on a separate line of the
+input. Each card is a pair of characters, the first character represents
+the face, the second is the suit. Cards are separated by exactly one
+space. Here&rsquo;s a sample hand.</p>
+<pre><code>  Kc 9s Ks Kd 9d 3c 6d
+  9c Ah Ks Kd 9d 3c 6d
+  Ac Qc Ks Kd 9d 3c
+  9h 5s
+  4d 2d Ks Kd 9d 3c 6d
+  7s Ts Ks Kd 9d
+</code></pre>
+<p>YOU: Okay, I was going ask what character to use for 10, but I guess &lsquo;T&rsquo;
+is it. And &lsquo;c&rsquo;, &rsquo;d&rsquo;, &lsquo;h&rsquo; and &rsquo;s&rsquo; for the suits, makes sense. Why aren&rsquo;t
+seven cards listed for every player?</p>
+<p>BOB: Well, if a player folds, only his hole cards and the community
+cards he&rsquo;s seen so far are shown.</p>
+<p>YOU: Right. And why did the fifth player play with a 4 and 2? They&rsquo;re
+suited, but geez, talk about risk&hellip;</p>
+<p>BOB: Stay on topic. Now, the end result of your code should generate
+output that looks like this:</p>
+<pre><code>  Kc 9s Ks Kd 9d 3c 6d Full House (winner)
+  9c Ah Ks Kd 9d 3c 6d Two Pair
+  Ac Qc Ks Kd 9d 3c 
+  9h 5s 
+  4d 2d Ks Kd 9d 3c 6d Flush
+  7s Ts Ks Kd 9d 
+</code></pre>
+<p>YOU: Okay, so I repeat the cards, list the rank or nothing if the player
+folded, and the word &ldquo;winner&rdquo; in parenthesis next to the winning hand.
+Do you want the cards rearranged at all?</p>
+<p>BOB: Hmmm&hellip; we can get by without it, but if you have the time, do it.
+Don&rsquo;t bother for folded hands, but for ranked hands, move the cards used
+to the front of the line, sorted by face. Kickers follow that, and the
+two unused cards go at the end, just before the rank is listed.</p>
+<p>YOU: Sounds good. One other thing, I need to brush up on the hand ranks.
+You have any good references for Texas Hold&rsquo;Em?</p>
+<p>BOB: Yeah, do an internet search on Poker Hand Rankings. And if you need
+it, the Rules of Texas Hold&rsquo;Em. While ranking, don&rsquo;t forget the kicker,
+the next highest card in their hand if player&rsquo;s are tied. And of course,
+if &ndash; even after the kicker &ndash; player&rsquo;s are still tied, put &ldquo;(winner)&rdquo;
+on each appropriate line of output.</p>
+<p>YOU: Ok. I still don&rsquo;t understand one thing&hellip;</p>
+<p>BOB: What&rsquo;s that?</p>
+<p>YOU: Why he stayed in with only the 4 and 2 of diamonds? That&rsquo;s just&hellip;</p>
+<p>BOB: Hey! Show&rsquo;s on in ten minutes! Get to work!</p>
+<h2 id="clues">Clues</h2>
+<p>There are two dimensions to this problem. Firstly how to rank a
+particular hand (“Flush” or “Two Pairs” etc) and secondly how to compare
+hands and determine which will win. A very easy way to get going with
+this Kata is just to concentrate on the first dimension, and write lots
+of code that can successfully assigns a rank to all the different kinds
+of hand. This is all well and good, but I think you’ll find some
+refactoring in order when you come to tackle the second dimension. My
+recommendation is to write just enough code to identify one or two
+ranks, then start working on comparing hands. You can fill in the
+details of all the different ranks when you have a basic structure that
+can both rank and compare hands.</p>
+<p>One interesting aspect of this Kata is the OO design that you come up
+with. What classes do you need? What responsibilities do they have? Have
+you removed all duplication?</p>
+<p>Another interesting aspect which you may or may not want to go into, is
+how you express the rules of Poker. These rules are both repetitive and
+arbitrary and in many ways resemble the kinds of business rules you meet
+in the real world. Can you find a way of expressing them that will leave
+an expert poker player able to verify that they are implemented
+correctly, even if they are not themselves a programmer?</p>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/kata/TexasHoldEm.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

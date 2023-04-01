@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>2007Aug22SPDojo - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/record/2007Aug22SPDojo/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/record/2007Aug22SPDojo/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        2007Aug22SPDojo
+        
+      </h1>
+
+      <pre><code>**Participants:** [DaniloSato](/people/DaniloSato) , DeiseAoki ,
+</code></pre>
+<p>EduardoKatayama , <a href="https://codingdojo.org/FabricioSousa">FabricioSousa</a> ,
+<a href="https://codingdojo.org/people/HugoCorbucci">HugoCorbucci</a> , JacquelineMarchetti ,
+<a href="https://codingdojo.org/people/JulianMonteiro">JulianMonteiro</a> , <a href="https://codingdojo.org/MarianaBravo">MarianaBravo</a>
+, PauloCheque , RafaelBarroso , RicardoAbe and ThiagoColucci</p>
+<p><strong>Scribe:</strong> <a href="https://codingdojo.org/people/DaniloSato">DaniloSato</a></p>
+<p><strong>Kata:</strong> Poker Hands in Python (an slightly easier version of
+<a href="https://codingdojo.org/kata/TexasHoldEm">KataTexasHoldEm</a> )</p>
+<h2 id="schedule">Schedule</h2>
+<dl>
+<dt>:   20:00 ~ 20:15 Dojo Introduction</dt>
+<dd>
+<p>Since we had four new members, we decided to go quickly through our
+Dojo Introduction slides.</p>
+</dd>
+<dd>
+<p>20:15 ~ 20:20 Discussion of the Kata</p>
+</dd>
+<dd>
+<p>The problem was already attacked in the last meeting, so we
+discussed a little some different implementation approaches to rank
+different hands. We decided to calculate the rank by sorting the
+cards, multiplying each card value by a power of 15 (based on the
+sorting order) and, for each type of hand, give greater powers
+of 15. This way we would be able to compare two hand&rsquo;s by
+their ranks. An example (already sorted): 2H 4D 7S 8C 8H =&gt;
+2*15**0 + 4*15**1 + 7*15**2 + 8*15**3 + 8*15**4 +
+8*15**5 (the 5th power stands for the pair). If the hand had two
+pairs, the lower pair would have the 5th power and the higher pair
+would have the 6th power of 15 and so on&hellip;</p>
+</dd>
+<dd>
+<p>20:20 ~ 22:00 Coding Session</p>
+</dd>
+<dd>
+<p>We decided to try a Randori style again, in Python. The first two
+pairs were able to quickly code the Card and Hand objects
+(and parsing). From then on, we implemented tests and code to
+calculate the rank of different kinds of hands. We had some trouble
+to get the Two Pairs test passing. After that, we were able to
+continue smoothly. Although we were not able to finish the Kata, we
+went much farther then the last meeting. The code is available
+at groups.google.com/group/dojo_sp/files.</p>
+</dd>
+<dd>
+<p>22:00 ~ 22:15 Retrospective</p>
+</dd>
+<dd>
+<p>The new environment (Linux, Eclipse, Pydev) worked better; we found
+that this was one of the most organized meetings following a
+Randori style. We enjoyed following the strategy chosen in the
+beginning of the meeting, as well as the new members of the Dojo.
+The people felt that it wouldn&rsquo;t be interesting to try this Kata
+again in the next meeting, althought some said they would try it
+at home.</p>
+</dd>
+</dl>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/record/2007Aug22SPDojo.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>

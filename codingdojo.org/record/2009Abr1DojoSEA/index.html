@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700|Raleway|Poiret+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://codingdojo.org/css/codingdojo.css">
+  <title>2009Abr1DojoSEA - Coding Dojo</title>
+  <meta name="generator" content="Hugo 0.109.0">
+
+  
+  <link rel="canonical" href="https://codingdojo.org/record/2009Abr1DojoSEA/">
+  
+
+  <meta property="og:url" content="https://codingdojo.org/record/2009Abr1DojoSEA/">
+  <meta property="og:title" content="Coding Dojo">
+  
+  <meta name="apple-mobile-web-app-title" content="Coding Dojo">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://codingdojo.org/images/favicon.ico">
+</head>
+
+<body>
+  <header class="main-header">
+  <h1><a href= />Coding Dojo</a></h1>
+  <nav class="main-header__nav main-nav">
+    <ul class="main-nav__list"><li class="main-nav__item">
+        <a href="https://codingdojo.org/dojo/" class="main-nav__link">
+          Dojos
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/kata/" class="main-nav__link">
+          Kata
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/people/" class="main-nav__link">
+          People
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/practices/" class="main-nav__link">
+          Practices
+        </a>
+      </li><li class="main-nav__item main-nav__item--active">
+        <a href="https://codingdojo.org/record/" class="main-nav__link">
+          Records
+        </a>
+      </li><li class="main-nav__item">
+        <a href="https://codingdojo.org/solution/" class="main-nav__link">
+          Solutions
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="top-right-corner ribbon gradient">
+  <div class="seams">
+    <a class="" href="https://gitlab.com/codingdojo-org" title="View on Gitlab">
+      Edit on Gitlab
+    </a>
+  </div>
+</div>
+
+  <article class="page">
+    <div class="content">
+      <h1>
+        2009Abr1DojoSEA
+        
+      </h1>
+
+      <pre><code>\[Bruno e Carol\] Tentam resolver problema com linha a mais. Comeуaram
+</code></pre>
+<p>adicionando comentрrios. Tentam descobrir porque Щltima linha que
+deveria ser &ldquo;#####&rdquo; ж &quot; &ldquo;. Descobrem que ж um if que tem uma
+restriусo para bordas.</p>
+<p>[Carol e Tulio] apagaram um if complicado que tinham escrito logo
+antes e nao impactou muito. acharam mais um defeitinho no cзdigo, a
+linha passada para imprimir a borda inferior estava errada. Comeуamos a
+entender o problema de novo&hellip;</p>
+<p>[Tulio e Adam] se concentraram em entender a lзgica do mжtodo de
+preencher a borda inferior e fizeram o teste passar. Rodaram todos os
+testes e acabaram quebrando outros 14 testes por causa do Щltimo # de
+cada crosswords. Descobriram que estava faltando o caractere
+intermediario entre os elementos, a borda divisзria. Comeуaram a
+entender o problema desse Щltimo caracter&hellip;</p>
+<p>[Adam e Pedro.Dias] Comeуaram a resolver o problema do caractere da
+divisзria que estava faltando. Escreveram a parte que printava o canto e
+passaram todos os testes.</p>
+<p>[Pedro Dias e Vinьcius] Pegaram o cзdigo, a princьpio, para refatorar.
+Estao tentando transformar (i+1 &lt; linha.length()) em uma funусo
+existeProximo(). Criaram a funусo. Pedro sugeriu transformar
+linha.chrAt(i) != &lsquo;B&rsquo; em um mжtodo. Criaram o mжtodo isBorda(). Estсo
+pensando na semсntica dele: ser igual a &lsquo;B&rsquo; ж isBorda() ou !isBorda()?
+Tр todo mundo falando, que coisa feia, tsc, tsc, tsc&hellip; Testes
+quebrando.</p>
+<p>[Vinicius e Bruno] Descobriram que o mжtodo refatorado, existeProximo,
+na verdade verifica se o prзximo nсo ж borda. O nome e o mжtodo foram
+refatorados para proximoEhBorda , assim foi preciso negar as condiушes
+onde o mжtodo aparece. A refatoraусo do mжtodo trouxe impacto e quebrou
+todos os testes, parece que a lзgica que verifica se o prзximo ж borda
+estр errada. O refactory foi voltado e o cзdigo comitado. O nome do
+mжtodo foi refatorado novamente para ProximoExisteENaoEhBorda .</p>
+<p>[Bruno e Carol] fizeram vрrios refactoring de extraусo de mжtodos e
+remoусo de cзdigo duplicado.</p>
+<p>Fim do Dojo</p>
+<p>RETROSPECTIVA: - Os ultimos dojos progrediram pouco; - O codigo tava
+ficando muito complicado. O refactoring q comeуamos comeуou a melhorar
+muito. - Ao final de cзdigo de hj nзs refatoramos o mжtodo da
+bordaInferior fora, e foi o Щnico pedaуo que a gente programou. - Seria
+legal refatorar a classe Puzzle, para rever a responsabilidade dela&hellip; -
+Tр faltando um pouco de atenусo na logьstica do dojo. Deverьamos mandar
+os links e recursos todos no convite, imprimir o problema para os
+iniciantes, ou publicar no blog, etc. - Esse wiki do codingdojo.org nсo
+ж muito convidativo. O grupo do google ж mais legal (tulio); - Pedro e
+Vinicius ficaram meio perdidos. Nсo conheciam o problema bem e o cзdigo
+estava mesmo meio enrolado; - Foi зtimo ter jogado um mжtodo todo fora e
+renomear os mжtodos;</p>
+
+      <div class="article-footer">
+        <a class="button" href="https://gitlab.com/codingdojo-org/codingdojo.org/-/edit/master/content/record/2009Abr1DojoSEA.md ">Edit</a>
+      </div>
+    </div>
+  </article>
+  <footer class="bottom">
+  <nav>
+    <ul>
+
+      
+      <li><a href="https://codingdojo.org/">fr</a></li>
+      
+      <li><a href="https://codingdojo.org/">en</a></li>
+      
+      <li><a href="https://codingdojo.org/">pt</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+</body>
+</html>
